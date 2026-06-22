@@ -4,161 +4,126 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>トレカター図鑑</title>
-
 <style>
-body{
-  font-family:sans-serif;
-  background:#f3f4f6;
-  margin:0;
-  padding:24px;
-}
-h1{
-  text-align:center;
-  font-size:36px;
-}
-.card{
-  background:white;
-  padding:22px;
-  border-radius:18px;
-  margin-bottom:20px;
-  box-shadow:0 4px 16px rgba(0,0,0,.08);
-}
-button{
-  width:100%;
-  padding:15px;
-  margin:6px 0;
-  border:none;
-  border-radius:12px;
-  background:#4f46e5;
-  color:white;
-  font-size:16px;
-}
-.back{
-  background:#111827;
-}
-.hidden{
-  display:none;
-}
-.grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:10px;
-}
-.pocket{
-  background:#f9fafb;
-  border:1px solid #ddd;
-  border-radius:12px;
-  padding:12px;
-  text-align:center;
-  min-height:130px;
-}
-.fake-img{
-  background:#ddd;
-  border-radius:8px;
-  height:90px;
-  margin-bottom:8px;
-}
-.small{
-  color:#666;
-  font-size:12px;
-}
+body{font-family:sans-serif;background:#f3f4f6;margin:0;padding:20px;}
+h1{text-align:center;font-size:34px;}
+.menuBtn{position:fixed;top:18px;left:18px;font-size:30px;background:#111827;color:white;border:none;border-radius:10px;padding:8px 14px;z-index:10;}
+.menu{position:fixed;top:0;left:-260px;width:240px;height:100%;background:white;box-shadow:4px 0 20px #999;padding:25px;transition:.3s;z-index:20;}
+.menu.open{left:0;}
+.menu button{background:#111827;}
+.card{background:white;padding:22px;border-radius:18px;margin:70px auto 20px;max-width:760px;box-shadow:0 4px 16px rgba(0,0,0,.08);}
+button{width:100%;padding:15px;margin:6px 0;border:none;border-radius:12px;background:#4f46e5;color:white;font-size:16px;}
+.back{background:#111827;}
+.hidden{display:none;}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
+.grid12{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;}
+.pocket{background:#f9fafb;border:1px solid #ddd;border-radius:12px;padding:8px;text-align:center;min-height:120px;font-size:13px;}
+.fake-img{background:#ddd;border-radius:8px;height:80px;margin-bottom:8px;}
+.spread{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.page{background:#eef0f3;border-radius:16px;padding:10px;}
+.small{color:#666;font-size:12px;}
 </style>
 </head>
-
 <body>
-
+<button class="menuBtn" onclick="toggleMenu()">☰</button>
+<div id="menu" class="menu">
+<h2>メニュー</h2>
+<button onclick="showPage('home');toggleMenu()">ポケモンカード</button>
+<button onclick="alert('ワンピースカードは準備中')">ワンピースカード</button>
+<button onclick="showPage('filing');toggleMenu()">ファイリング</button>
+</div>
 <h1>トレカター図鑑</h1>
-
 <div id="home" class="card">
-  <h2>シリーズ選択</h2>
-  <button onclick="showPage('sv')">スカーレット＆バイオレット</button>
-  <button disabled>ソード＆シールド（準備中）</button>
-  <button disabled>サン＆ムーン（準備中）</button>
+<h2>シリーズ選択</h2>
+<button onclick="showPage('sv')">スカーレット＆バイオレット</button>
+<button disabled>ソード＆シールド（準備中）</button>
+<button disabled>サン＆ムーン（準備中）</button>
 </div>
-
 <div id="sv" class="card hidden">
-  <button class="back" onclick="showPage('home')">← 戻る</button>
-  <h2>スカーレット＆バイオレット</h2>
-
-  <button onclick="openBox('SV1S スカーレットex')">SV1S スカーレットex</button>
-  <button onclick="openBox('SV1V バイオレットex')">SV1V バイオレットex</button>
-  <button onclick="openBox('SV1a トリプレットビート')">SV1a トリプレットビート</button>
-  <button onclick="openBox('SV2P スノーハザード')">SV2P スノーハザード</button>
-  <button onclick="openBox('SV2D クレイバースト')">SV2D クレイバースト</button>
-  <button onclick="openBox('SV2a ポケモンカード151')">SV2a ポケモンカード151</button>
-  <button onclick="openBox('SV3 黒炎の支配者')">SV3 黒炎の支配者</button>
-  <button onclick="openBox('SV3a レイジングサーフ')">SV3a レイジングサーフ</button>
-  <button onclick="openBox('SV4K 古代の咆哮')">SV4K 古代の咆哮</button>
-  <button onclick="openBox('SV4M 未来の一閃')">SV4M 未来の一閃</button>
-  <button onclick="openBox('SV4a シャイニートレジャーex')">SV4a シャイニートレジャーex</button>
-  <button onclick="openBox('SV5K ワイルドフォース')">SV5K ワイルドフォース</button>
-  <button onclick="openBox('SV5M サイバージャッジ')">SV5M サイバージャッジ</button>
-  <button onclick="openBox('SV5a クリムゾンヘイズ')">SV5a クリムゾンヘイズ</button>
-  <button onclick="openBox('SV6 変幻の仮面')">SV6 変幻の仮面</button>
-  <button onclick="openBox('SV6a ナイトワンダラー')">SV6a ナイトワンダラー</button>
-  <button onclick="openBox('SV7 ステラミラクル')">SV7 ステラミラクル</button>
-  <button onclick="openBox('SV7a 楽園ドラゴーナ')">SV7a 楽園ドラゴーナ</button>
-  <button onclick="openBox('SV8 超電ブレイカー')">SV8 超電ブレイカー</button>
-  <button onclick="openBox('SV8a テラスタルフェスex')">SV8a テラスタルフェスex</button>
-  <button onclick="openBox('SV9 バトルパートナーズ')">SV9 バトルパートナーズ</button>
-  <button onclick="openBox('SV9a 熱風のアリーナ')">SV9a 熱風のアリーナ</button>
-  <button onclick="openBox('SV10 ロケット団の栄光')">SV10 ロケット団の栄光</button>
-  <button onclick="openBox('SV11B ブラックボルト')">SV11B ブラックボルト</button>
-  <button onclick="openBox('SV11W ホワイトフレア')">SV11W ホワイトフレア</button>
+<button class="back" onclick="showPage('home')">← 戻る</button>
+<h2>スカーレット＆バイオレット</h2>
+<button onclick="openBox('SV1S スカーレットex')">SV1S スカーレットex</button>
+<button onclick="openBox('SV1V バイオレットex')">SV1V バイオレットex</button>
+<button onclick="openBox('SV1a トリプレットビート')">SV1a トリプレットビート</button>
+<button onclick="openBox('SV2P スノーハザード')">SV2P スノーハザード</button>
+<button onclick="openBox('SV2D クレイバースト')">SV2D クレイバースト</button>
+<button onclick="openBox('SV2a ポケモンカード151')">SV2a ポケモンカード151</button>
+<button onclick="openBox('SV3 黒炎の支配者')">SV3 黒炎の支配者</button>
+<button onclick="openBox('SV3a レイジングサーフ')">SV3a レイジングサーフ</button>
+<button onclick="openBox('SV4K 古代の咆哮')">SV4K 古代の咆哮</button>
+<button onclick="openBox('SV4M 未来の一閃')">SV4M 未来の一閃</button>
+<button onclick="openBox('SV4a シャイニートレジャーex')">SV4a シャイニートレジャーex</button>
+<button onclick="openBox('SV5K ワイルドフォース')">SV5K ワイルドフォース</button>
+<button onclick="openBox('SV5M サイバージャッジ')">SV5M サイバージャッジ</button>
+<button onclick="openBox('SV5a クリムゾンヘイズ')">SV5a クリムゾンヘイズ</button>
+<button onclick="openBox('SV6 変幻の仮面')">SV6 変幻の仮面</button>
+<button onclick="openBox('SV6a ナイトワンダラー')">SV6a ナイトワンダラー</button>
+<button onclick="openBox('SV7 ステラミラクル')">SV7 ステラミラクル</button>
+<button onclick="openBox('SV7a 楽園ドラゴーナ')">SV7a 楽園ドラゴーナ</button>
+<button onclick="openBox('SV8 超電ブレイカー')">SV8 超電ブレイカー</button>
+<button onclick="openBox('SV8a テラスタルフェスex')">SV8a テラスタルフェスex</button>
+<button onclick="openBox('SV9 バトルパートナーズ')">SV9 バトルパートナーズ</button>
+<button onclick="openBox('SV9a 熱風のアリーナ')">SV9a 熱風のアリーナ</button>
+<button onclick="openBox('SV10 ロケット団の栄光')">SV10 ロケット団の栄光</button>
+<button onclick="openBox('SV11B ブラックボルト')">SV11B ブラックボルト</button>
+<button onclick="openBox('SV11W ホワイトフレア')">SV11W ホワイトフレア</button>
 </div>
-
 <div id="box" class="card hidden">
-  <button class="back" onclick="showPage('sv')">← BOX一覧へ戻る</button>
-  <h2 id="boxTitle"></h2>
-
-  <button onclick="openRarity('AR')">AR</button>
-  <button onclick="openRarity('SAR')">SAR</button>
-  <button onclick="openRarity('UR')">UR</button>
+<button class="back" onclick="showPage('sv')">← BOX一覧へ戻る</button>
+<h2 id="boxTitle"></h2>
+<button onclick="openRarity('AR')">AR</button>
+<button onclick="openRarity('SAR')">SAR</button>
+<button onclick="openRarity('UR')">UR</button>
 </div>
-
 <div id="rarity" class="card hidden">
-  <button class="back" onclick="showPage('box')">← レアリティへ戻る</button>
-  <h2 id="rarityTitle"></h2>
-  <p class="small">画像は後で追加。まずは骨組み。</p>
-
-  <div class="grid">
-    <div class="pocket">
-      <div class="fake-img"></div>
-      カード名
-    </div>
-    <div class="pocket">
-      <div class="fake-img"></div>
-      カード名
-    </div>
-    <div class="pocket">
-      <div class="fake-img"></div>
-      カード名
-    </div>
-  </div>
+<button class="back" onclick="showPage('box')">← レアリティへ戻る</button>
+<h2 id="rarityTitle"></h2>
+<p class="small">画像は後で追加。まずは骨組み。</p>
+<div class="grid">
+<div class="pocket"><div class="fake-img"></div>カード名</div>
+<div class="pocket"><div class="fake-img"></div>カード名</div>
+<div class="pocket"><div class="fake-img"></div>カード名</div>
 </div>
-
+</div>
+<div id="filing" class="card hidden">
+<h2>ファイリング</h2>
+<button onclick="showFiling('nine')">9ポケット 両面見開き</button>
+<button onclick="showFiling('twelve')">12ポケット 両面見開き</button>
+<div id="filingArea"></div>
+</div>
 <script>
-let currentBox = "";
-
+let currentBox="";
+function toggleMenu(){
+document.getElementById("menu").classList.toggle("open");
+}
 function showPage(id){
-  document.getElementById("home").classList.add("hidden");
-  document.getElementById("sv").classList.add("hidden");
-  document.getElementById("box").classList.add("hidden");
-  document.getElementById("rarity").classList.add("hidden");
-  document.getElementById(id).classList.remove("hidden");
+["home","sv","box","rarity","filing"].forEach(p=>document.getElementById(p).classList.add("hidden"));
+document.getElementById(id).classList.remove("hidden");
 }
-
 function openBox(name){
-  currentBox = name;
-  document.getElementById("boxTitle").textContent = name;
-  showPage("box");
+currentBox=name;
+document.getElementById("boxTitle").textContent=name;
+showPage("box");
 }
-
 function openRarity(rarity){
-  document.getElementById("rarityTitle").textContent = currentBox + " / " + rarity;
-  showPage("rarity");
+document.getElementById("rarityTitle").textContent=currentBox+" / "+rarity;
+showPage("rarity");
+}
+function chooseCard(el){
+let name=prompt("入れたいカード名を入力");
+if(name){el.innerHTML='<div class="fake-img"></div>'+name;}
+}
+function showFiling(type){
+let count= type==="nine" ? 9 : 12;
+let cls= type==="nine" ? "grid" : "grid12";
+let title= type==="nine" ? "9ポケット見開き" : "12ポケット見開き";
+let html="<h3>"+title+"</h3><p class='small'>ポケットを押すとカード名を入れられます。</p><div class='spread'><div class='page'><h4>左ページ</h4><div class='"+cls+"'>";
+for(let i=0;i<count;i++){html+="<div class='pocket' onclick='chooseCard(this)'><div class='fake-img'></div>空</div>";}
+html+="</div></div><div class='page'><h4>右ページ</h4><div class='"+cls+"'>";
+for(let i=0;i<count;i++){html+="<div class='pocket' onclick='chooseCard(this)'><div class='fake-img'></div>空</div>";}
+html+="</div></div></div>";
+document.getElementById("filingArea").innerHTML=html;
 }
 </script>
-
 </body>
 </html>
