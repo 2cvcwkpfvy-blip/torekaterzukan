@@ -11,7 +11,7 @@ body{margin:0;background:#F5F4F0;color:#111;font-family:"Hiragino Mincho ProN","
 h1{margin:0;font-size:34px;letter-spacing:.12em}
 .sub{margin-top:10px;font-size:12px;letter-spacing:.22em;color:#8a7330}
 .copy{margin-top:28px;line-height:1.9;font-size:15px}
-.menuBtn{position:absolute;top:18px;left:0;width:46px;height:46px;border:1px solid #C9A227;background:#111;color:#C9A227;border-radius:50%;font-size:24px}
+.menuBtn{position:absolute;top:18px;left:-12px;
 .overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.72);z-index:50;padding:88px 24px}
 .overlay.open{display:block}
 .menuItem{display:block;width:100%;background:#F5F4F0;color:#111;border:1px solid #C9A227;padding:18px;margin:14px 0;border-radius:14px;font-size:18px;opacity:0;transform:translateY(-20px);animation:drop .35s forwards}
@@ -41,7 +41,7 @@ button{font-family:inherit}
 <body>
 
 <div class="header">
-<button class="menuBtn" onclick="toggleMenu()">☰</button>
+<button class="menuItem" onclick="go('home')">ポケモンカード</button>
 <h1>トレカター図鑑</h1>
 <div class="sub">TRADING CARD ARCHIVE</div>
 <div class="copy">
@@ -58,7 +58,7 @@ button{font-family:inherit}
 </div>
 
 <div id="home" class="panel">
-<h2>シリーズ別</h2>
+<h2>ポケモンカード</h2>
 <button class="btn" onclick="go('sv')">スカーレット＆バイオレット</button>
 <button class="btn" onclick="go('promo')">プロモカード</button>
 </div>
@@ -156,7 +156,7 @@ function openBox(name){
 currentBox=name;
 document.getElementById("boxTitle").textContent=name;
 let box=data[name]||{};
-let rarities=["AR","SAR","SR","UR"];
+let rarities=["AR","SR","SAR","UR"];
 let html="";
 rarities.forEach(r=>{
 let count=box[r]?box[r].length:0;
