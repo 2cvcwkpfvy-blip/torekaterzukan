@@ -7,11 +7,11 @@
 <style>
 *{box-sizing:border-box}
 body{margin:0;background:#F5F4F0;color:#111;font-family:"Hiragino Mincho ProN","Yu Mincho",serif;padding:22px}
-.header{text-align:center;padding:42px 0 28px;border-bottom:1px solid #C9A227;margin-bottom:26px;position:relative}
-h1{margin:0;font-size:34px;letter-spacing:.12em}
-.sub{margin-top:10px;font-size:12px;letter-spacing:.22em;color:#8a7330}
-.copy{margin-top:28px;line-height:1.9;font-size:15px}
-.menuBtn{position:absolute;top:18px;left:-12px;
+.header{min-height:70vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;border-bottom:1px solid #C9A227;position:relative}
+h1{margin:0;font-size:38px;letter-spacing:.12em}
+.sub{margin-top:12px;font-size:12px;letter-spacing:.24em;color:#8a7330}
+.copy{margin-top:34px;line-height:2;font-size:15px}
+.menuBtn{position:absolute;top:18px;left:-10px;width:46px;height:46px;border:1px solid #C9A227;background:#111;color:#C9A227;border-radius:50%;font-size:24px}
 .overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.72);z-index:50;padding:88px 24px}
 .overlay.open{display:block}
 .menuItem{display:block;width:100%;background:#F5F4F0;color:#111;border:1px solid #C9A227;padding:18px;margin:14px 0;border-radius:14px;font-size:18px;opacity:0;transform:translateY(-20px);animation:drop .35s forwards}
@@ -30,7 +30,7 @@ button{font-family:inherit}
 .imgBox{aspect-ratio:63/88;background:linear-gradient(135deg,#ddd,#fff);border-radius:8px;margin-bottom:8px}
 .small{font-family:sans-serif;font-size:12px;color:#666}
 .spread{display:grid;grid-template-columns:1fr 26px 1fr;gap:10px;overflow-x:auto}
-.page{min-width:290px;background:#ede9dd;border-radius:18px;padding:12px}
+.page{min-width:310px;background:#ede9dd;border-radius:18px;padding:12px}
 .grid9{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
 .grid12{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
 .ring{background:#111;border-radius:18px;min-height:430px;position:relative}
@@ -41,23 +41,23 @@ button{font-family:inherit}
 <body>
 
 <div class="header">
-<button class="menuItem" onclick="go('home')">ポケモンカード</button>
+<button class="menuBtn" onclick="toggleMenu()">☰</button>
 <h1>トレカター図鑑</h1>
 <div class="sub">TRADING CARD ARCHIVE</div>
 <div class="copy">
 コレクションを、もっと美しく。<br>
-ファイリングシュミレーターができる<br>
+ファイリングシミュレーターができる<br>
 唯一のコレクションサイト
 </div>
 </div>
 
 <div id="menu" class="overlay">
 <button class="menuItem dark" onclick="toggleMenu()">閉じる</button>
-<button class="menuItem" onclick="go('home')">シリーズ別</button>
-<button class="menuItem" onclick="go('filing')">ファイリングシュミレーター</button>
+<button class="menuItem" onclick="go('home')">ポケモンカード</button>
+<button class="menuItem" onclick="go('filing')">ファイリングシミュレーター</button>
 </div>
 
-<div id="home" class="panel">
+<div id="home" class="panel hidden">
 <h2>ポケモンカード</h2>
 <button class="btn" onclick="go('sv')">スカーレット＆バイオレット</button>
 <button class="btn" onclick="go('promo')">プロモカード</button>
@@ -89,50 +89,14 @@ button{font-family:inherit}
 </div>
 
 <div id="filing" class="panel hidden">
-<h2>ファイリングシュミレーター</h2>
+<h2>ファイリングシミュレーター</h2>
 <button class="btn" onclick="showFiling(9)">9ポケット 両面見開き</button>
 <button class="btn" onclick="showFiling(12)">12ポケット 両面見開き</button>
 <div id="filingArea"></div>
 </div>
 
+<script src="data.js"></script>
 <script>
-const sets=[
-["SV1S","スカーレットex"],
-["SV1V","バイオレットex"],
-["SV1a","トリプレットビート"],
-["SV2P","スノーハザード"],
-["SV2D","クレイバースト"],
-["SV2a","ポケモンカード151"],
-["SV3","黒炎の支配者"],
-["SV3a","レイジングサーフ"],
-["SV4K","古代の咆哮"],
-["SV4M","未来の一閃"],
-["SV4a","シャイニートレジャーex"],
-["SV5K","ワイルドフォース"],
-["SV5M","サイバージャッジ"],
-["SV5a","クリムゾンヘイズ"],
-["SV6","変幻の仮面"],
-["SV6a","ナイトワンダラー"],
-["SV7","ステラミラクル"],
-["SV7a","楽園ドラゴーナ"],
-["SV8","超電ブレイカー"],
-["SV8a","テラスタルフェスex"],
-["SV9","バトルパートナーズ"],
-["SV9a","熱風のアリーナ"],
-["SV10","ロケット団の栄光"],
-["SV11B","ブラックボルト"],
-["SV11W","ホワイトフレア"]
-];
-
-const data={
-"SV1S スカーレットex":{
-"AR":["オリーニョ","グレンアルマ","ウミディグダ","ヘイラッシャ","ラルトス","キルリア","パピモッチ","リオル","メグロコ","ガケガニ","ドドゲザン","ムックル"],
-"SAR":["サーナイトex","イダイナキバex","コライドンex","ジニア","ボタン"],
-"SR":["ギャラドスex","サーナイトex","イダイナキバex","コライドンex","ドクロッグex","パフュートンex","ジニア","スター団のしたっぱ","博士の研究 オーリム博士","ボタン"],
-"UR":["コライドンex","ネストボール","基本闘エネルギー"]
-}
-};
-
 let currentBox="";
 
 function toggleMenu(){document.getElementById("menu").classList.toggle("open")}
@@ -141,11 +105,12 @@ function go(id){
 document.getElementById("menu").classList.remove("open");
 ["home","sv","promo","box","cards","filing"].forEach(x=>document.getElementById(x).classList.add("hidden"));
 document.getElementById(id).classList.remove("hidden");
+window.scrollTo(0,0);
 }
 
 function renderSets(){
 let html="";
-sets.forEach(s=>{
+SETS.forEach(s=>{
 let full=s[0]+" "+s[1];
 html+=`<button class="btn" onclick="openBox('${full}')"><span class="setCode">${s[0]}</span><span class="setName">${s[1]}</span></button>`;
 });
@@ -155,7 +120,7 @@ document.getElementById("setList").innerHTML=html;
 function openBox(name){
 currentBox=name;
 document.getElementById("boxTitle").textContent=name;
-let box=data[name]||{};
+let box=CARD_DATA[name]||{};
 let rarities=["AR","SR","SAR","UR"];
 let html="";
 rarities.forEach(r=>{
@@ -174,7 +139,7 @@ go("box");
 }
 
 function openRarity(r){
-let list=(data[currentBox]&&data[currentBox][r])?data[currentBox][r]:[];
+let list=(CARD_DATA[currentBox]&&CARD_DATA[currentBox][r])?CARD_DATA[currentBox][r]:[];
 document.getElementById("cardsTitle").textContent=currentBox+" / "+r;
 let html="";
 if(list.length===0){
