@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
@@ -6,76 +6,141 @@
 <title>トレカター図鑑</title>
 
 <style>
+*{box-sizing:border-box}
+
 body{
-  font-family:sans-serif;
-  background:#f3f4f6;
   margin:0;
-  padding:20px;
+  font-family:"Hiragino Mincho ProN","Yu Mincho",serif;
+  background:#F5F4F0;
+  color:#111;
+  padding:22px;
+}
+
+.header{
+  position:relative;
+  text-align:center;
+  padding:34px 0 24px;
+  border-bottom:1px solid #C9A227;
+  margin-bottom:24px;
 }
 
 h1{
-  text-align:center;
+  margin:0;
   font-size:34px;
-  margin-top:70px;
+  letter-spacing:.12em;
+}
+
+.subtitle{
+  margin-top:8px;
+  font-size:12px;
+  letter-spacing:.25em;
+  color:#8a7330;
 }
 
 .menuBtn{
-  position:fixed;
-  top:14px;
-  left:14px;
-  right:14px;
-  height:52px;
-  background:#111827;
-  color:white;
-  border:none;
-  border-radius:0;
-  font-size:28px;
-  z-index:10;
+  position:absolute;
+  top:22px;
+  right:0;
+  width:48px;
+  height:48px;
+  border:1px solid #C9A227;
+  background:#111;
+  color:#C9A227;
+  font-size:26px;
+  border-radius:50%;
 }
 
-.menu{
+.overlay{
   display:none;
   position:fixed;
-  top:66px;
-  left:14px;
-  right:14px;
-  background:white;
-  border-radius:18px;
-  padding:16px;
-  box-shadow:0 8px 24px rgba(0,0,0,.18);
-  z-index:20;
+  inset:0;
+  background:rgba(0,0,0,.72);
+  z-index:50;
+  padding:90px 24px;
 }
 
-.menu.open{
+.overlay.open{
   display:block;
 }
 
-.card{
-  background:white;
-  padding:22px;
-  border-radius:18px;
-  margin:20px auto;
-  max-width:760px;
-  box-shadow:0 4px 16px rgba(0,0,0,.08);
-}
-
-button{
+.menuItem{
+  display:block;
   width:100%;
-  padding:15px;
-  margin:6px 0;
-  border:none;
-  border-radius:12px;
-  background:#4f46e5;
-  color:white;
+  background:#F5F4F0;
+  color:#111;
+  border:1px solid #C9A227;
+  padding:18px;
+  margin:14px 0;
+  border-radius:14px;
+  font-size:18px;
+  letter-spacing:.08em;
+  opacity:0;
+  transform:translateY(-20px);
+  animation:drop .35s forwards;
+}
+
+.menuItem:nth-child(2){animation-delay:.06s}
+.menuItem:nth-child(3){animation-delay:.12s}
+.menuItem:nth-child(4){animation-delay:.18s}
+.menuItem:nth-child(5){animation-delay:.24s}
+
+@keyframes drop{
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+.close{
+  background:#111;
+  color:#C9A227;
+}
+
+.panel{
+  background:#fffdf8;
+  border:1px solid #d8c88a;
+  border-radius:20px;
+  padding:22px;
+  margin:18px auto;
+  max-width:820px;
+  box-shadow:0 12px 28px rgba(0,0,0,.08);
+}
+
+h2{
+  margin-top:0;
+  letter-spacing:.08em;
+}
+
+.btn{
+  width:100%;
+  background:#fff;
+  color:#111;
+  border:1px solid #C9A227;
+  border-radius:14px;
+  padding:16px;
+  margin:8px 0;
   font-size:16px;
+  letter-spacing:.05em;
 }
 
-.back{
-  background:#111827;
+.btn.dark{
+  background:#111;
+  color:#C9A227;
 }
 
-.hidden{
-  display:none;
+.hidden{display:none}
+
+.setCode{
+  display:block;
+  font-size:13px;
+  color:#8a7330;
+  letter-spacing:.12em;
+}
+
+.setName{
+  display:block;
+  margin-top:4px;
+  font-size:18px;
 }
 
 .grid{
@@ -91,122 +156,146 @@ button{
 }
 
 .pocket{
-  background:#f9fafb;
-  border:1px solid #ddd;
-  border-radius:12px;
+  background:#faf9f4;
+  border:1px solid #d8c88a;
+  border-radius:10px;
+  min-height:115px;
   padding:8px;
   text-align:center;
-  min-height:120px;
-  font-size:13px;
+  font-family:sans-serif;
+  font-size:12px;
 }
 
-.fake-img{
-  background:#ddd;
+.fakeImg{
+  height:78px;
+  background:linear-gradient(135deg,#ddd,#fff);
   border-radius:8px;
-  height:80px;
-  margin-bottom:8px;
+  margin-bottom:7px;
 }
 
 .spread{
   display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:14px;
+  grid-template-columns:1fr 26px 1fr;
+  gap:10px;
+  align-items:start;
+  overflow-x:auto;
 }
 
+.ring{
+  background:#111;
+  border-radius:18px;
+  min-height:430px;
+  position:relative;
+}
+
+.ring:before,
+.ring:after{
+  content:"";
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+  width:12px;
+  height:12px;
+  border-radius:50%;
+  background:#C9A227;
+}
+
+.ring:before{top:120px}
+.ring:after{bottom:120px}
+
 .page{
-  background:#eef0f3;
-  border-radius:16px;
-  padding:10px;
+  min-width:260px;
+  background:#ede9dd;
+  border-radius:18px;
+  padding:12px;
 }
 
 .small{
-  color:#666;
+  font-family:sans-serif;
   font-size:12px;
-}
-
-@media(max-width:600px){
-  .spread{
-    grid-template-columns:1fr;
-  }
+  color:#666;
 }
 </style>
 </head>
 
 <body>
 
-<button class="menuBtn" onclick="toggleMenu()">☰</button>
-
-<div id="menu" class="menu">
-  <button onclick="showPage('home');toggleMenu()">ポケモンカード</button>
-  <button onclick="alert('ワンピースカードは準備中')">ワンピースカード</button>
-  <button onclick="showPage('filing');toggleMenu()">ファイリングシュミレーター</button>
+<div class="header">
+  <button class="menuBtn" onclick="toggleMenu()">☰</button>
+  <h1>トレカター図鑑</h1>
+  <div class="subtitle">TRADING CARD ARCHIVE</div>
 </div>
 
-<h1>トレカター図鑑</h1>
-
-<div id="home" class="card">
-  <h2>シリーズ選択</h2>
-  <button onclick="showPage('sv')">スカーレット＆バイオレット</button>
-  <button disabled>ソード＆シールド（準備中）</button>
-  <button disabled>サン＆ムーン（準備中）</button>
+<div id="menu" class="overlay">
+  <button class="menuItem close" onclick="toggleMenu()">閉じる</button>
+  <button class="menuItem" onclick="go('home')">ポケモンカード</button>
+  <button class="menuItem" onclick="alert('ワンピースカードは準備中')">ワンピースカード</button>
+  <button class="menuItem" onclick="go('filing')">ファイリングシュミレーター</button>
+  <button class="menuItem" onclick="alert('設定は準備中')">設定</button>
 </div>
 
-<div id="sv" class="card hidden">
-  <button class="back" onclick="showPage('home')">← 戻る</button>
+<div id="home" class="panel">
+  <h2>カテゴリー</h2>
+  <button class="btn" onclick="go('sv')">スカーレット＆バイオレット</button>
+  <button class="btn" disabled>ソード＆シールド（準備中）</button>
+  <button class="btn" disabled>サン＆ムーン（準備中）</button>
+</div>
+
+<div id="sv" class="panel hidden">
+  <button class="btn dark" onclick="go('home')">← 戻る</button>
   <h2>スカーレット＆バイオレット</h2>
 
-  <button onclick="openBox('SV1S スカーレットex')">SV1S スカーレットex</button>
-  <button onclick="openBox('SV1V バイオレットex')">SV1V バイオレットex</button>
-  <button onclick="openBox('SV1a トリプレットビート')">SV1a トリプレットビート</button>
-  <button onclick="openBox('SV2P スノーハザード')">SV2P スノーハザード</button>
-  <button onclick="openBox('SV2D クレイバースト')">SV2D クレイバースト</button>
-  <button onclick="openBox('SV2a ポケモンカード151')">SV2a ポケモンカード151</button>
-  <button onclick="openBox('SV3 黒炎の支配者')">SV3 黒炎の支配者</button>
-  <button onclick="openBox('SV3a レイジングサーフ')">SV3a レイジングサーフ</button>
-  <button onclick="openBox('SV4K 古代の咆哮')">SV4K 古代の咆哮</button>
-  <button onclick="openBox('SV4M 未来の一閃')">SV4M 未来の一閃</button>
-  <button onclick="openBox('SV4a シャイニートレジャーex')">SV4a シャイニートレジャーex</button>
-  <button onclick="openBox('SV5K ワイルドフォース')">SV5K ワイルドフォース</button>
-  <button onclick="openBox('SV5M サイバージャッジ')">SV5M サイバージャッジ</button>
-  <button onclick="openBox('SV5a クリムゾンヘイズ')">SV5a クリムゾンヘイズ</button>
-  <button onclick="openBox('SV6 変幻の仮面')">SV6 変幻の仮面</button>
-  <button onclick="openBox('SV6a ナイトワンダラー')">SV6a ナイトワンダラー</button>
-  <button onclick="openBox('SV7 ステラミラクル')">SV7 ステラミラクル</button>
-  <button onclick="openBox('SV7a 楽園ドラゴーナ')">SV7a 楽園ドラゴーナ</button>
-  <button onclick="openBox('SV8 超電ブレイカー')">SV8 超電ブレイカー</button>
-  <button onclick="openBox('SV8a テラスタルフェスex')">SV8a テラスタルフェスex</button>
-  <button onclick="openBox('SV9 バトルパートナーズ')">SV9 バトルパートナーズ</button>
-  <button onclick="openBox('SV9a 熱風のアリーナ')">SV9a 熱風のアリーナ</button>
-  <button onclick="openBox('SV10 ロケット団の栄光')">SV10 ロケット団の栄光</button>
-  <button onclick="openBox('SV11B ブラックボルト')">SV11B ブラックボルト</button>
-  <button onclick="openBox('SV11W ホワイトフレア')">SV11W ホワイトフレア</button>
+  <button class="btn" onclick="openBox('SV1S スカーレットex')"><span class="setCode">SV1S</span><span class="setName">スカーレットex</span></button>
+  <button class="btn" onclick="openBox('SV1V バイオレットex')"><span class="setCode">SV1V</span><span class="setName">バイオレットex</span></button>
+  <button class="btn" onclick="openBox('SV1a トリプレットビート')"><span class="setCode">SV1a</span><span class="setName">トリプレットビート</span></button>
+  <button class="btn" onclick="openBox('SV2P スノーハザード')"><span class="setCode">SV2P</span><span class="setName">スノーハザード</span></button>
+  <button class="btn" onclick="openBox('SV2D クレイバースト')"><span class="setCode">SV2D</span><span class="setName">クレイバースト</span></button>
+  <button class="btn" onclick="openBox('SV2a ポケモンカード151')"><span class="setCode">SV2a</span><span class="setName">ポケモンカード151</span></button>
+  <button class="btn" onclick="openBox('SV3 黒炎の支配者')"><span class="setCode">SV3</span><span class="setName">黒炎の支配者</span></button>
+  <button class="btn" onclick="openBox('SV3a レイジングサーフ')"><span class="setCode">SV3a</span><span class="setName">レイジングサーフ</span></button>
+  <button class="btn" onclick="openBox('SV4K 古代の咆哮')"><span class="setCode">SV4K</span><span class="setName">古代の咆哮</span></button>
+  <button class="btn" onclick="openBox('SV4M 未来の一閃')"><span class="setCode">SV4M</span><span class="setName">未来の一閃</span></button>
+  <button class="btn" onclick="openBox('SV4a シャイニートレジャーex')"><span class="setCode">SV4a</span><span class="setName">シャイニートレジャーex</span></button>
+  <button class="btn" onclick="openBox('SV5K ワイルドフォース')"><span class="setCode">SV5K</span><span class="setName">ワイルドフォース</span></button>
+  <button class="btn" onclick="openBox('SV5M サイバージャッジ')"><span class="setCode">SV5M</span><span class="setName">サイバージャッジ</span></button>
+  <button class="btn" onclick="openBox('SV5a クリムゾンヘイズ')"><span class="setCode">SV5a</span><span class="setName">クリムゾンヘイズ</span></button>
+  <button class="btn" onclick="openBox('SV6 変幻の仮面')"><span class="setCode">SV6</span><span class="setName">変幻の仮面</span></button>
+  <button class="btn" onclick="openBox('SV6a ナイトワンダラー')"><span class="setCode">SV6a</span><span class="setName">ナイトワンダラー</span></button>
+  <button class="btn" onclick="openBox('SV7 ステラミラクル')"><span class="setCode">SV7</span><span class="setName">ステラミラクル</span></button>
+  <button class="btn" onclick="openBox('SV7a 楽園ドラゴーナ')"><span class="setCode">SV7a</span><span class="setName">楽園ドラゴーナ</span></button>
+  <button class="btn" onclick="openBox('SV8 超電ブレイカー')"><span class="setCode">SV8</span><span class="setName">超電ブレイカー</span></button>
+  <button class="btn" onclick="openBox('SV8a テラスタルフェスex')"><span class="setCode">SV8a</span><span class="setName">テラスタルフェスex</span></button>
+  <button class="btn" onclick="openBox('SV9 バトルパートナーズ')"><span class="setCode">SV9</span><span class="setName">バトルパートナーズ</span></button>
+  <button class="btn" onclick="openBox('SV9a 熱風のアリーナ')"><span class="setCode">SV9a</span><span class="setName">熱風のアリーナ</span></button>
+  <button class="btn" onclick="openBox('SV10 ロケット団の栄光')"><span class="setCode">SV10</span><span class="setName">ロケット団の栄光</span></button>
+  <button class="btn" onclick="openBox('SV11B ブラックボルト')"><span class="setCode">SV11B</span><span class="setName">ブラックボルト</span></button>
+  <button class="btn" onclick="openBox('SV11W ホワイトフレア')"><span class="setCode">SV11W</span><span class="setName">ホワイトフレア</span></button>
 </div>
 
-<div id="box" class="card hidden">
-  <button class="back" onclick="showPage('sv')">← BOX一覧へ戻る</button>
+<div id="box" class="panel hidden">
+  <button class="btn dark" onclick="go('sv')">← BOX一覧へ戻る</button>
   <h2 id="boxTitle"></h2>
-
-  <button onclick="openRarity('AR')">AR</button>
-  <button onclick="openRarity('SAR')">SAR</button>
-  <button onclick="openRarity('UR')">UR</button>
+  <button class="btn" onclick="openRarity('AR')">AR</button>
+  <button class="btn" onclick="openRarity('SAR')">SAR</button>
+  <button class="btn" onclick="openRarity('UR')">UR</button>
 </div>
 
-<div id="rarity" class="card hidden">
-  <button class="back" onclick="showPage('box')">← レアリティへ戻る</button>
+<div id="rarity" class="panel hidden">
+  <button class="btn dark" onclick="go('box')">← レアリティへ戻る</button>
   <h2 id="rarityTitle"></h2>
   <p class="small">画像は後で追加。まずは骨組み。</p>
 
   <div class="grid">
-    <div class="pocket"><div class="fake-img"></div>カード名</div>
-    <div class="pocket"><div class="fake-img"></div>カード名</div>
-    <div class="pocket"><div class="fake-img"></div>カード名</div>
+    <div class="pocket"><div class="fakeImg"></div>カード名</div>
+    <div class="pocket"><div class="fakeImg"></div>カード名</div>
+    <div class="pocket"><div class="fakeImg"></div>カード名</div>
   </div>
 </div>
 
-<div id="filing" class="card hidden">
+<div id="filing" class="panel hidden">
   <h2>ファイリングシュミレーター</h2>
-  <button onclick="showFiling('nine')">9ポケット 両面見開き</button>
-  <button onclick="showFiling('twelve')">12ポケット 両面見開き</button>
+  <button class="btn" onclick="showFiling('nine')">9ポケット 両面見開き</button>
+  <button class="btn" onclick="showFiling('twelve')">12ポケット 両面見開き</button>
   <div id="filingArea"></div>
 </div>
 
@@ -217,7 +306,8 @@ function toggleMenu(){
   document.getElementById("menu").classList.toggle("open");
 }
 
-function showPage(id){
+function go(id){
+  document.getElementById("menu").classList.remove("open");
   ["home","sv","box","rarity","filing"].forEach(p=>{
     document.getElementById(p).classList.add("hidden");
   });
@@ -227,37 +317,27 @@ function showPage(id){
 function openBox(name){
   currentBox=name;
   document.getElementById("boxTitle").textContent=name;
-  showPage("box");
+  go("box");
 }
 
 function openRarity(rarity){
   document.getElementById("rarityTitle").textContent=currentBox+" / "+rarity;
-  showPage("rarity");
+  go("rarity");
 }
 
 function chooseCard(el){
-  let name=prompt("入れたいカード名を入力");
-  if(name){
-    el.innerHTML='<div class="fake-img"></div>'+name;
-  }
+  alert("後でカード一覧・検索から画像を選べるようにする");
 }
 
 function showFiling(type){
   let count= type==="nine" ? 9 : 12;
   let cls= type==="nine" ? "grid" : "grid12";
   let title= type==="nine" ? "9ポケット見開き" : "12ポケット見開き";
-  let html="<h3>"+title+"</h3><p class='small'>ポケットを押すとカード名を入れられます。</p><div class='spread'><div class='page'><h4>左ページ</h4><div class='"+cls+"'>";
-  
-  for(let i=0;i<count;i++){
-    html+="<div class='pocket' onclick='chooseCard(this)'><div class='fake-img'></div>空</div>";
-  }
-
-  html+="</div></div><div class='page'><h4>右ページ</h4><div class='"+cls+"'>";
-
-  for(let i=0;i<count;i++){
-    html+="<div class='pocket' onclick='chooseCard(this)'><div class='fake-img'></div>空</div>";
-  }
-
+  let html="<h3>"+title+"</h3><p class='small'>後でポケットを押すとカード一覧から画像を選べるようにします。</p>";
+  html+="<div class='spread'><div class='page'><h4>左ページ</h4><div class='"+cls+"'>";
+  for(let i=0;i<count;i++){html+="<div class='pocket' onclick='chooseCard(this)'><div class='fakeImg'></div>空</div>";}
+  html+="</div></div><div class='ring'></div><div class='page'><h4>右ページ</h4><div class='"+cls+"'>";
+  for(let i=0;i<count;i++){html+="<div class='pocket' onclick='chooseCard(this)'><div class='fakeImg'></div>空</div>";}
   html+="</div></div></div>";
   document.getElementById("filingArea").innerHTML=html;
 }
