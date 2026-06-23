@@ -399,7 +399,7 @@ button{font-family:inherit}
 
 <section id="box" class="panel">
   <div class="contentBox">
-    <button class="btn dark" onclick="openPanel('sv')">← BOX一覧へ戻る</button>
+    <button class="btn dark" onclick="backFromBox()">← 戻る</button>
     <h2 id="boxTitle" class="centerTitle"></h2>
     <div id="rarityList"></div>
   </div>
@@ -562,6 +562,13 @@ function openPromo(){
 
   document.getElementById("rarityList").innerHTML=html;
   openPanel("box");
+}
+  function backFromBox(){
+  if(currentBox==="プロモ・限定カード"){
+    openPanel("pokemon");
+  }else{
+    openPanel("sv");
+  }
 }
 
 function openRarity(r){
