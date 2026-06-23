@@ -4,310 +4,58 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>トレカター図鑑</title>
-
 <style>
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-
-body{
-  margin:0;
-  background:#F5F4F0;
-  color:#111;
-  font-family:"Hiragino Mincho ProN","Yu Mincho",serif;
-}
-
-.menuBtn{
-  position:fixed;
-  top:24px;
-  left:8px;
-  width:52px;
-  height:52px;
-  border:1px solid #C9A227;
-  background:#111;
-  color:#C9A227;
-  border-radius:50%;
-  font-size:25px;
-  z-index:100;
-}
-
-.hero{
-  min-height:100vh;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  padding:40px 24px;
-}
-
-.siteTitle{
-  margin:0;
-  font-size:42px;
-  letter-spacing:.14em;
-  cursor:pointer;
-}
-
-.sub{
-  margin-top:16px;
-  font-size:12px;
-  letter-spacing:.26em;
-  color:#8a7330;
-}
-
-.copy{
-  margin-top:38px;
-  line-height:2;
-  font-size:15px;
-}
-
-.topLine{
-  width:88%;
-  max-width:780px;
-  height:1px;
-  background:#C9A227;
-  margin-top:70px;
-}
-
-.miniHeader{
-  display:none;
-  text-align:center;
-  padding:22px 20px 16px;
-  border-bottom:1px solid #C9A227;
-}
-
-.miniHeader .siteTitle{
-  font-size:28px;
-}
-
-.overlay{
-  display:none;
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.72);
-  z-index:80;
-  padding:90px 24px;
-}
-
+body{margin:0;background:#F5F4F0;color:#111;font-family:"Hiragino Mincho ProN","Yu Mincho",serif}
+.menuBtn{position:fixed;top:24px;left:8px;width:52px;height:52px;border:1px solid #C9A227;background:#111;color:#C9A227;border-radius:50%;font-size:25px;z-index:100}
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:40px 24px}
+.siteTitle{margin:0;font-size:42px;letter-spacing:.14em;cursor:pointer}
+.sub{margin-top:16px;font-size:12px;letter-spacing:.26em;color:#8a7330}
+.copy{margin-top:38px;line-height:2;font-size:15px}
+.topLine{width:88%;max-width:780px;height:1px;background:#C9A227;margin-top:70px}
+.miniHeader{display:none;text-align:center;padding:22px 20px 16px;border-bottom:1px solid #C9A227}
+.miniHeader .siteTitle{font-size:28px}
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.72);z-index:80;padding:90px 24px}
 .overlay.open{display:block}
-
-.menuItem{
-  display:block;
-  width:100%;
-  background:#F5F4F0;
-  color:#111;
-  border:1px solid #C9A227;
-  padding:18px;
-  margin:14px 0;
-  border-radius:14px;
-  font-size:18px;
-  letter-spacing:.08em;
-  opacity:0;
-  transform:translateY(-24px);
-  animation:drop .35s forwards;
-}
-
-.menuItem:nth-child(2){animation-delay:.06s}
-.menuItem:nth-child(3){animation-delay:.12s}
-.menuItem:nth-child(4){animation-delay:.18s}
-.menuItem:nth-child(5){animation-delay:.24s}
-
-@keyframes drop{
-  to{opacity:1;transform:translateY(0)}
-}
-
-.dark{
-  background:#111;
-  color:#C9A227;
-}
-
-.scrollMenu{
-  min-height:100vh;
-  padding:80px 22px;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  gap:18px;
-}
-
-.categoryCard{
-  background:#fffdf8;
-  border:1px solid #d8c88a;
-  border-radius:22px;
-  padding:28px 22px;
-  max-width:820px;
-  width:100%;
-  margin:0 auto;
-  box-shadow:0 12px 28px rgba(0,0,0,.08);
-  opacity:0;
-  transform:translateX(-28px);
-  animation:fadeSide .7s forwards;
-}
-
-.categoryCard:nth-child(2){animation-delay:.12s}
-.categoryCard:nth-child(3){animation-delay:.24s}
-
-@keyframes fadeSide{
-  to{opacity:1;transform:translateX(0)}
-}
-
-.categoryCard h2{
-  margin:0 0 10px;
-  font-size:28px;
-  letter-spacing:.08em;
-}
-
-.categoryCard p{
-  margin:0;
-  font-size:13px;
-  color:#666;
-  line-height:1.7;
-}
-
-.panel{
-  display:none;
-  min-height:100vh;
-  padding:28px 22px 70px;
-}
-
+.menuItem{display:block;width:100%;background:#F5F4F0;color:#111;border:1px solid #C9A227;padding:18px;margin:14px 0;border-radius:14px;font-size:18px;letter-spacing:.08em;opacity:0;transform:translateY(-24px);animation:drop .35s forwards}
+.menuItem:nth-child(2){animation-delay:.06s}.menuItem:nth-child(3){animation-delay:.12s}.menuItem:nth-child(4){animation-delay:.18s}
+@keyframes drop{to{opacity:1;transform:translateY(0)}}
+.dark{background:#111!important;color:#C9A227!important}
+.scrollMenu{min-height:100vh;padding:80px 22px;display:flex;flex-direction:column;justify-content:center;gap:18px}
+.categoryCard{background:#fffdf8;border:1px solid #d8c88a;border-radius:22px;padding:28px 22px;max-width:820px;width:100%;margin:0 auto;box-shadow:0 12px 28px rgba(0,0,0,.08);opacity:0;transform:translateX(-28px);animation:fadeSide .7s forwards}
+.categoryCard:nth-child(2){animation-delay:.12s}.categoryCard:nth-child(3){animation-delay:.24s}
+@keyframes fadeSide{to{opacity:1;transform:translateX(0)}}
+.categoryCard h2{margin:0 0 10px;font-size:28px;letter-spacing:.08em}
+.categoryCard p{margin:0;font-size:13px;color:#666;line-height:1.7}
+.panel{display:none;min-height:100vh;padding:28px 22px 70px}
 .panel.active{display:block}
-
-.contentBox{
-  background:#fffdf8;
-  border:1px solid #d8c88a;
-  border-radius:22px;
-  padding:24px;
-  max-width:820px;
-  margin:32px auto 0;
-  box-shadow:0 12px 28px rgba(0,0,0,.08);
-}
-
-.centerTitle{
-  text-align:center;
-  font-size:30px;
-  letter-spacing:.08em;
-  margin:0 0 22px;
-}
-
+.contentBox{background:#fffdf8;border:1px solid #d8c88a;border-radius:22px;padding:24px;max-width:820px;margin:32px auto 0;box-shadow:0 12px 28px rgba(0,0,0,.08)}
+.centerTitle{text-align:center;font-size:30px;letter-spacing:.08em;margin:0 0 22px}
 button{font-family:inherit}
-
-.btn{
-  width:100%;
-  background:#fff;
-  color:#111;
-  border:1px solid #C9A227;
-  border-radius:14px;
-  padding:16px;
-  margin:8px 0;
-  font-size:16px;
-}
-
-.btn.dark{
-  background:#111;
-  color:#C9A227;
-}
-
-.setCode{
-  display:block;
-  font-size:13px;
-  color:#8a7330;
-  letter-spacing:.12em;
-}
-
-.setName{
-  display:block;
-  margin-top:5px;
-  font-size:18px;
-}
-
+.btn{width:100%;background:#fff;color:#111;border:1px solid #C9A227;border-radius:14px;padding:16px;margin:8px 0;font-size:16px}
+.setCode{display:block;font-size:13px;color:#8a7330;letter-spacing:.12em}
+.setName{display:block;margin-top:5px;font-size:18px}
 .rarityBtn{text-align:left}
-
-.cardGrid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:12px;
-}
-
-.cardBox{
-  background:#faf9f4;
-  border:1px solid #d8c88a;
-  border-radius:12px;
-  padding:8px;
-  text-align:center;
-  font-family:sans-serif;
-  font-size:13px;
-}
-
-.imgBox{
-  aspect-ratio:63/88;
-  background:linear-gradient(135deg,#ddd,#fff);
-  border-radius:8px;
-  margin-bottom:8px;
-}
-
-.small{
-  font-family:sans-serif;
-  font-size:12px;
-  color:#666;
-}
-
-.spread{
-  display:grid;
-  grid-template-columns:1fr 26px 1fr;
-  gap:10px;
-  overflow-x:auto;
-}
-
-.page{
-  min-width:310px;
-  background:#ede9dd;
-  border-radius:18px;
-  padding:12px;
-}
-
-.grid9{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:8px;
-}
-
-.grid12{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:8px;
-}
-
-.ring{
-  background:#111;
-  border-radius:18px;
-  min-height:430px;
-  position:relative;
-}
-
-.ring:before,
-.ring:after{
-  content:"";
-  position:absolute;
-  left:50%;
-  transform:translateX(-50%);
-  width:12px;
-  height:12px;
-  border-radius:50%;
-  background:#C9A227;
-}
-
-.ring:before{top:120px}
-.ring:after{bottom:120px}
-
-@media(max-width:600px){
-  .siteTitle{font-size:36px}
-  .miniHeader .siteTitle{font-size:26px}
-  .cardGrid{grid-template-columns:repeat(2,1fr)}
-}
+.cardGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.cardBox{background:#faf9f4;border:1px solid #d8c88a;border-radius:12px;padding:8px;text-align:center;font-family:sans-serif;font-size:13px}
+.imgBox{aspect-ratio:63/88;background:linear-gradient(135deg,#ddd,#fff);border-radius:8px;margin-bottom:8px}
+.small{font-family:sans-serif;font-size:12px;color:#666}
+.spread{display:grid;grid-template-columns:1fr 26px 1fr;gap:10px;overflow-x:auto}
+.page{min-width:310px;background:#ede9dd;border-radius:18px;padding:12px}
+.grid9{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.grid12{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.ring{background:#111;border-radius:18px;min-height:430px;position:relative}
+.ring:before,.ring:after{content:"";position:absolute;left:50%;transform:translateX(-50%);width:12px;height:12px;border-radius:50%;background:#C9A227}
+.ring:before{top:120px}.ring:after{bottom:120px}
+.pocketSelect{cursor:pointer}
+.searchBox{width:100%;padding:14px;border:1px solid #C9A227;border-radius:12px;margin:10px 0;background:#fff;font-size:16px}
+.resultItem{width:100%;text-align:left;background:#fff;border:1px solid #d8c88a;border-radius:12px;padding:14px;margin:8px 0;font-family:sans-serif}
+@media(max-width:600px){.siteTitle{font-size:36px}.miniHeader .siteTitle{font-size:26px}.cardGrid{grid-template-columns:repeat(2,1fr)}}
 </style>
 </head>
 
 <body>
-
 <button class="menuBtn" onclick="toggleMenu()">☰</button>
 
 <div id="menu" class="overlay">
@@ -320,29 +68,14 @@ button{font-family:inherit}
 <section id="homeHero" class="hero">
   <h1 class="siteTitle" onclick="goHome()">トレカター図鑑</h1>
   <div class="sub">TRADING CARD ARCHIVE</div>
-  <div class="copy">
-    コレクションを、もっと美しく。<br>
-    ファイリングシミュレーターができる<br>
-    唯一のコレクションサイト
-  </div>
+  <div class="copy">コレクションを、もっと美しく。<br>ファイリングシミュレーターができる<br>唯一のコレクションサイト</div>
   <div class="topLine"></div>
 </section>
 
 <section id="scrollMenu" class="scrollMenu">
-  <div class="categoryCard" onclick="openPanel('pokemon')">
-    <h2>ポケモンカード</h2>
-    <p>スカーレット＆バイオレット、プロモカードをシリーズ別に整理。</p>
-  </div>
-
-  <div class="categoryCard" onclick="alert('ワンピースカードは準備中')">
-    <h2>ワンピースカード</h2>
-    <p>今後追加予定。</p>
-  </div>
-
-  <div class="categoryCard" onclick="openPanel('filing')">
-    <h2>ファイリングシミュレーター</h2>
-    <p>9ポケット・12ポケットで理想のバインダー構成を作成。</p>
-  </div>
+  <div class="categoryCard" onclick="openPanel('pokemon')"><h2>ポケモンカード</h2><p>スカーレット＆バイオレット、プロモカードをシリーズ別に整理。</p></div>
+  <div class="categoryCard" onclick="alert('ワンピースカードは準備中')"><h2>ワンピースカード</h2><p>今後追加予定。</p></div>
+  <div class="categoryCard" onclick="openPanel('filing')"><h2>ファイリングシミュレーター</h2><p>9ポケット・12ポケットで理想のバインダー構成を作成。</p></div>
 </section>
 
 <div id="miniHeader" class="miniHeader">
@@ -350,75 +83,76 @@ button{font-family:inherit}
   <div class="sub">TRADING CARD ARCHIVE</div>
 </div>
 
-<section id="pokemon" class="panel">
-  <div class="contentBox">
-    <h2 class="centerTitle">ポケモンカード</h2>
-    <button class="btn" onclick="openPanel('sv')">スカーレット＆バイオレット</button>
-    <button class="btn" onclick="openPanel('promo')">プロモカード</button>
-  </div>
-</section>
+<section id="pokemon" class="panel"><div class="contentBox">
+  <h2 class="centerTitle">ポケモンカード</h2>
+  <button class="btn" onclick="openPanel('sv')">スカーレット＆バイオレット</button>
+  <button class="btn" onclick="openPanel('promo')">プロモカード</button>
+</div></section>
 
-<section id="sv" class="panel">
-  <div class="contentBox">
-    <button class="btn dark" onclick="openPanel('pokemon')">← 戻る</button>
-    <h2 class="centerTitle">スカーレット＆バイオレット</h2>
-    <div id="setList"></div>
-  </div>
-</section>
+<section id="sv" class="panel"><div class="contentBox">
+  <button class="btn dark" onclick="openPanel('pokemon')">← 戻る</button>
+  <h2 class="centerTitle">スカーレット＆バイオレット</h2>
+  <div id="setList"></div>
+</div></section>
 
-<section id="promo" class="panel">
-  <div class="contentBox">
-    <button class="btn dark" onclick="openPanel('pokemon')">← 戻る</button>
-    <h2 class="centerTitle">プロモカード</h2>
-    <button class="btn" onclick="openPromo()">SV-P</button>
-  </div>
-</section>
+<section id="promo" class="panel"><div class="contentBox">
+  <button class="btn dark" onclick="openPanel('pokemon')">← 戻る</button>
+  <h2 class="centerTitle">プロモカード</h2>
+  <button class="btn" onclick="openPromo()">SV-P</button>
+</div></section>
 
-<section id="box" class="panel">
-  <div class="contentBox">
-    <button class="btn dark" onclick="openPanel('sv')">← BOX一覧へ戻る</button>
-    <h2 id="boxTitle" class="centerTitle"></h2>
-    <div id="rarityList"></div>
-  </div>
-</section>
+<section id="box" class="panel"><div class="contentBox">
+  <button class="btn dark" onclick="openPanel('sv')">← BOX一覧へ戻る</button>
+  <h2 id="boxTitle" class="centerTitle"></h2>
+  <div id="rarityList"></div>
+</div></section>
 
-<section id="cards" class="panel">
-  <div class="contentBox">
-    <button class="btn dark" onclick="openPanel('box')">← レアリティへ戻る</button>
-    <h2 id="cardsTitle" class="centerTitle"></h2>
-    <p class="small">画像は後で追加。画像を貼るだけで完成する枠です。</p>
-    <div id="cardGrid" class="cardGrid"></div>
-  </div>
-</section>
+<section id="cards" class="panel"><div class="contentBox">
+  <button class="btn dark" onclick="openPanel('box')">← レアリティへ戻る</button>
+  <h2 id="cardsTitle" class="centerTitle"></h2>
+  <p class="small">画像は後で追加。画像を貼るだけで完成する枠です。</p>
+  <div id="cardGrid" class="cardGrid"></div>
+</div></section>
 
-<section id="filing" class="panel">
-  <div class="contentBox">
-    <h2 class="centerTitle">ファイリングシミュレーター</h2>
-    <button class="btn" onclick="showFiling(9)">9ポケット 両面見開き</button>
-    <button class="btn" onclick="showFiling(12)">12ポケット 両面見開き</button>
-    <div id="filingArea"></div>
-  </div>
-</section>
+<section id="filing" class="panel"><div class="contentBox">
+  <h2 class="centerTitle">ファイリングシミュレーター</h2>
+  <button class="btn" onclick="showFiling(9)">9ポケット 両面見開き</button>
+  <button class="btn" onclick="showFiling(12)">12ポケット 両面見開き</button>
+  <div id="filingArea"></div>
+</div></section>
+
+<section id="selectCard" class="panel"><div class="contentBox">
+  <button class="btn dark" onclick="openPanel('filing')">← ファイルへ戻る</button>
+  <h2 class="centerTitle">カードを選択</h2>
+  <input id="cardSearch" class="searchBox" placeholder="カード名で検索" oninput="renderSearch()">
+  <div id="searchResults"></div>
+</div></section>
 
 <script src="data.js"></script>
-
 <script>
 let currentBox="";
+let selectedPocket=null;
 
-function toggleMenu(){
-  document.getElementById("menu").classList.toggle("open");
+function allCards(){
+  let arr=[];
+  Object.keys(CARD_DATA).forEach(set=>{
+    Object.keys(CARD_DATA[set]).forEach(r=>{
+      CARD_DATA[set][r].forEach(name=>{
+        arr.push({name:name, rarity:r, set:set});
+      });
+    });
+  });
+  return arr;
 }
+
+function toggleMenu(){document.getElementById("menu").classList.toggle("open")}
 
 function goHome(){
   document.getElementById("menu").classList.remove("open");
   document.getElementById("homeHero").style.display="flex";
   document.getElementById("scrollMenu").style.display="flex";
   document.getElementById("miniHeader").style.display="none";
-
-  document.querySelectorAll(".panel").forEach(p=>{
-    p.classList.remove("active");
-  });
-
+  document.querySelectorAll(".panel").forEach(p=>p.classList.remove("active"));
   window.scrollTo(0,0);
 }
 
@@ -427,11 +161,7 @@ function openPanel(id){
   document.getElementById("homeHero").style.display="none";
   document.getElementById("scrollMenu").style.display="none";
   document.getElementById("miniHeader").style.display="block";
-
-  document.querySelectorAll(".panel").forEach(p=>{
-    p.classList.remove("active");
-  });
-
+  document.querySelectorAll(".panel").forEach(p=>p.classList.remove("active"));
   document.getElementById(id).classList.add("active");
 }
 
@@ -439,12 +169,7 @@ function renderSets(){
   let html="";
   SETS.forEach(s=>{
     let full=s[0]+" "+s[1];
-    html+=`
-      <button class="btn" onclick="openBox('${full}')">
-        <span class="setCode">${s[0]}</span>
-        <span class="setName">${s[1]}</span>
-      </button>
-    `;
+    html+=`<button class="btn" onclick="openBox('${full}')"><span class="setCode">${s[0]}</span><span class="setName">${s[1]}</span></button>`;
   });
   document.getElementById("setList").innerHTML=html;
 }
@@ -452,16 +177,13 @@ function renderSets(){
 function openBox(name){
   currentBox=name;
   document.getElementById("boxTitle").textContent=name;
-
   let box=CARD_DATA[name]||{};
   let rarities=["AR","SR","SAR","UR"];
   let html="";
-
   rarities.forEach(r=>{
     let count=box[r]?box[r].length:0;
     html+=`<button class="btn rarityBtn" onclick="openRarity('${r}')">${r}　|　全${count}種</button>`;
   });
-
   document.getElementById("rarityList").innerHTML=html;
   openPanel("box");
 }
@@ -469,74 +191,55 @@ function openBox(name){
 function openPromo(){
   currentBox="SV-P プロモカード";
   document.getElementById("boxTitle").textContent=currentBox;
-  document.getElementById("rarityList").innerHTML=
-    `<button class="btn rarityBtn" onclick="openRarity('PROMO')">PROMO　|　全0種</button>`;
+  document.getElementById("rarityList").innerHTML=`<button class="btn rarityBtn" onclick="openRarity('PROMO')">PROMO　|　全0種</button>`;
   openPanel("box");
 }
 
 function openRarity(r){
   let list=(CARD_DATA[currentBox]&&CARD_DATA[currentBox][r])?CARD_DATA[currentBox][r]:[];
-
   document.getElementById("cardsTitle").textContent=currentBox+" / "+r;
-
   let html="";
-
-  if(list.length===0){
-    html=`<p class="small">カードデータ登録準備中</p>`;
-  }else{
-    list.forEach(name=>{
-      html+=`
-        <div class="cardBox">
-          <div class="imgBox"></div>
-          ${name}
-        </div>
-      `;
-    });
-  }
-
+  if(list.length===0){html=`<p class="small">カードデータ登録準備中</p>`}
+  else{list.forEach(name=>{html+=`<div class="cardBox"><div class="imgBox"></div>${name}</div>`})}
   document.getElementById("cardGrid").innerHTML=html;
   openPanel("cards");
 }
 
+function choosePocket(el){
+  selectedPocket=el;
+  document.getElementById("cardSearch").value="";
+  renderSearch();
+  openPanel("selectCard");
+}
+
+function renderSearch(){
+  let q=document.getElementById("cardSearch").value.trim();
+  let list=allCards().filter(c=>!q || c.name.includes(q)).slice(0,80);
+  let html="";
+  list.forEach(c=>{
+    html+=`<button class="resultItem" onclick="setPocket('${c.name} ${c.rarity}')">${c.name}　${c.rarity}<br><span class="small">${c.set}</span></button>`;
+  });
+  document.getElementById("searchResults").innerHTML=html;
+}
+
+function setPocket(text){
+  if(selectedPocket){
+    selectedPocket.innerHTML=`<div class="imgBox"></div>${text}`;
+  }
+  openPanel("filing");
+}
+
 function showFiling(num){
   let cls=num===9 ? "grid9" : "grid12";
-
-  let html=`
-    <h3>${num}ポケット見開き</h3>
-    <div class="spread">
-      <div class="page">
-        <h4>左ページ</h4>
-        <div class="${cls}">
-  `;
-
-  for(let i=0;i<num;i++){
-    html+=`<div class="cardBox"><div class="imgBox"></div></div>`;
-  }
-
-  html+=`
-        </div>
-      </div>
-      <div class="ring"></div>
-      <div class="page">
-        <h4>右ページ</h4>
-        <div class="${cls}">
-  `;
-
-  for(let i=0;i<num;i++){
-    html+=`<div class="cardBox"><div class="imgBox"></div></div>`;
-  }
-
-  html+=`
-        </div>
-      </div>
-    </div>
-  `;
-
+  let html=`<h3>${num}ポケット見開き</h3><p class="small">ポケットを押すとカードを検索できます。</p><div class="spread"><div class="page"><h4>左ページ</h4><div class="${cls}">`;
+  for(let i=0;i<num;i++)html+=`<div class="cardBox pocketSelect" onclick="choosePocket(this)"><div class="imgBox"></div>空</div>`;
+  html+=`</div></div><div class="ring"></div><div class="page"><h4>右ページ</h4><div class="${cls}">`;
+  for(let i=0;i<num;i++)html+=`<div class="cardBox pocketSelect" onclick="choosePocket(this)"><div class="imgBox"></div>空</div>`;
+  html+=`</div></div></div>`;
   document.getElementById("filingArea").innerHTML=html;
 }
 
 renderSets();
 </script>
-
 </body>
 </html>
