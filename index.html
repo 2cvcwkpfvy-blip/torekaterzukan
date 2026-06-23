@@ -178,12 +178,12 @@ function openBox(name){
   currentBox=name;
   document.getElementById("boxTitle").textContent=name;
   let box=CARD_DATA[name]||{};
-  let rarities=["AR","SR","SAR","UR"];
-  let html="";
-  rarities.forEach(r=>{
-    let count=box[r]?box[r].length:0;
-    html+=`<button class="btn rarityBtn" onclick="openRarity('${r}')">${r}　|　全${count}種</button>`;
-  });
+  let let html="";
+
+Object.keys(box).forEach(r=>{
+  let count=box[r].length;
+  html+=`<button class="btn rarityBtn" onclick="openRarity('${r}')">${r}　|　全${count}種</button>`;
+});
   document.getElementById("rarityList").innerHTML=html;
   openPanel("box");
 }
