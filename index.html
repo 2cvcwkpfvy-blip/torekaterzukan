@@ -383,7 +383,7 @@ button{font-family:inherit}
   <div class="contentBox">
     <h2 class="centerTitle">ポケモンカード</h2>
     <button class="btn" onclick="openPanel('sv')">スカーレット＆バイオレット</button>
-    <button class="btn" onclick="openPanel('promo')">プロモカード</button>
+    <button class="btn" onclick="openPromo()">プロモ・限定カード</button>
   </div>
 </section>
 
@@ -395,13 +395,7 @@ button{font-family:inherit}
   </div>
 </section>
 
-<section id="promo" class="panel">
-  <div class="contentBox">
-    <button class="btn dark" onclick="openPanel('pokemon')">← 戻る</button>
-    <h2 class="centerTitle">プロモカード</h2>
-    <button class="btn" onclick="openPromo()">SV-P</button>
-  </div>
-</section>
+
 
 <section id="box" class="panel">
   <div class="contentBox">
@@ -550,7 +544,7 @@ function openBox(name){
 }
 
 function openPromo(){
-  currentBox="SV-P プロモカード";
+  currentBox="プロモ・限定カード";
   document.getElementById("boxTitle").textContent=currentBox;
 
   let box=CARD_DATA[currentBox] || {};
@@ -565,10 +559,6 @@ function openPromo(){
       </button>
     `;
   });
-
-  if(!html){
-    html=`<p class="small">カードデータ登録準備中</p>`;
-  }
 
   document.getElementById("rarityList").innerHTML=html;
   openPanel("box");
