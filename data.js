@@ -96,7 +96,7 @@ const CARD_IMAGES = {
 
   "SV1V バイオレットex|UR|ミライドンex":"images/sv/sv1v-106-miraidon-ex-ur.webp",
   "SV1V バイオレットex|UR|ふしぎなアメ":"images/sv/sv1v-107-fushigina-ame-ur.webp",
-  "SV1V バイオレットex|UR|基本雷エネルギー":"images/sv/sv1v-108-lightning-energy-
+  "SV1V バイオレットex|UR|基本雷エネルギー":"images/sv/sv1v-108-lightning-energy-ur.webp",
 
 "プロモ・限定カード|AR仕様|001/SV-P ピカチュウ（『ポケットモンスター スカーレット・バイオレット』早期購入特典）":"images/sv/promo-001-svp-pikachu.webp",
 "プロモ・限定カード|AR仕様|048/SV-P ミライドン（トリプレットビート シールド戦プロモカードパック）":"images/sv/promo-048-svp-miraidon.webp",
@@ -117,7 +117,7 @@ const CARD_IMAGES = {
 "プロモ・限定カード|AR仕様|SVOD 019/018 ダイゴのダンバル（スターターセットex ダイゴのダンバル＆メタグロスex）":"images/sv/promo-svod-019-daigo-danbaru.webp",
 "プロモ・限定カード|AR仕様|SVOM 020/019 マリィのモルペコ（スターターセットex マリィのモルペコ＆オーロンゲex）":"images/sv/promo-svom-020-mary-morpeko.webp",
 
-"プロモ・限定カード|SAR仕様|WCS23 001/030 ピカチュウex（ポケモンWCS2023横浜 記念デッキ『ピカチュウ』収録）":"images/sv/promo-wcs23-001-pikachu-ex.webp",
+"プロモ・限定カード|SAR仕様|WCS23 001/030 ピカチュウex（ポケモンWCS2023横浜 記念デッキ『ピカチュウ』収録）":"images/sv/promo-wcs23-001-pikachu-ex.webp"
 };
 
 const CARD_DATA = {
