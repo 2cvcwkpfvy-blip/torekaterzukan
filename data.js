@@ -214,7 +214,7 @@ const CARD_IMAGES = {
 "プロモ・限定カード|AR仕様|SVG 050/049 フシギダネ（スタートデッキGenerations スペシャルバトルセット）":"images/sv/promo-svg-050-fushigidane.webp",
 "プロモ・限定カード|AR仕様|SVG 051/049 ヒトカゲ（スタートデッキGenerations スペシャルバトルセット）":"images/sv/promo-svg-051-hitokage.webp",
 "プロモ・限定カード|AR仕様|SVG 052/049 ゼニガメ（スタートデッキGenerations スペシャルバトルセット）":"images/sv/promo-svg-052-zenigame.webp",
-
+"プロモ・限定カード|AR仕様|148/SV-P オーガポンみどりのめん（スペシャルジャンボカードセット「オーガポン」）":"images/sv/IMG_2428.webp",
 "プロモ・限定カード|AR仕様|218/SV-P ピカチュウ（ポケカの夏がキタ！プロモカードGetキャンペーン）":"images/sv/promo-218-svp-pikachu.webp",
 
 "プロモ・限定カード|AR仕様|192/SV-P ニャース（スタートデッキGenerations スペシャルバトルセット）":"images/sv/promo-192-svp-nyarth.webp",
@@ -816,7 +816,7 @@ const CARD_DATA = {
   "SVG 052/049 ゼニガメ（スタートデッキGenerations スペシャルバトルセット）",
 
   "218/SV-P ピカチュウ（ポケカの夏がキタ！プロモカードGetキャンペーン）",
-
+"148/SV-P オーガポンみどりのめん（スペシャルジャンボカードセット「オーガポン」）",
   "192/SV-P ニャース（スタートデッキGenerations スペシャルバトルセット）",
   "193/SV-P パルデアウパー（スタートデッキGenerations スペシャルバトルセット）",
 
