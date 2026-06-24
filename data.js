@@ -84,7 +84,6 @@ const CARD_IMAGES = {
 "SV1V バイオレットex|UR|ミライドンex":"images/sv/sv1v-106-miraidon-ex-ur.webp",
 "SV1V バイオレットex|UR|ふしぎなアメ":"images/sv/sv1v-107-fushigina-ame-ur.webp",
 "SV1V バイオレットex|UR|基本雷エネルギー":"images/sv/sv1v-108-lightning-energy-ur.webp",
-
 };
 
 const CARD_DATA = {
