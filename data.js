@@ -117,7 +117,7 @@ const CARD_IMAGES = {
 "プロモ・限定カード|AR仕様|SVOD 019/018 ダイゴのダンバル（スターターセットex ダイゴのダンバル＆メタグロスex）":"images/sv/promo-svod-019-daigo-danbaru.webp",
 "プロモ・限定カード|AR仕様|SVOM 020/019 マリィのモルペコ（スターターセットex マリィのモルペコ＆オーロンゲex）":"images/sv/promo-svom-020-mary-morpeko.webp",
 
-"プロモ・限定カード|SAR仕様|WCS23 001/030 ピカチュウex（ポケモンWCS2023横浜 記念デッキ『ピカチュウ』収録）":"images/sv/promo-wcs23-001-pikachu-ex.webp"
+"プロモ・限定カード|SAR仕様|WCS23 001/030 ピカチュウex (ポケモンWCS2023横浜 記念デッキ「ピカチュウ」収録)":"images/sv/promo-wcs23-001-pikachu-ex.webp"
 };
 
 const CARD_DATA = {
