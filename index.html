@@ -157,13 +157,18 @@ function getCardName(card){
   return card.name || "";
 }
 
-function getCardImage(card){
-  if(typeof card==="string") return "";
+function getCardImage(card,set="",rarity=""){
+  if(typeof card==="string"){
+    if(typeof CARD_IMAGES !== "undefined"){
+      return CARD_IMAGES[`${set}|${rarity}|${card}`] || "";
+    }
+    return "";
+  }
   return card.image || "";
 }
 
-function makeImageBox(card){
-  const image=getCardImage(card);
+function makeImageBox(card,set="",rarity=""){
+  const image=getCardImage(card,set,rarity);
   if(image){
     return `<div class="imgBox"><img src="${image}" alt="${getCardName(card)}"></div>`;
   }
@@ -177,7 +182,7 @@ function allCards(){
       CARD_DATA[set][r].forEach(card=>{
         arr.push({
           name:getCardName(card),
-          image:getCardImage(card),
+          image:getCardImage(card,set,r),
           rarity:r,
           set:set
         });
@@ -287,7 +292,7 @@ function openRarity(r){
     list.forEach(card=>{
       html+=`
         <div class="cardBox">
-          ${makeImageBox(card)}
+          ${makeImageBox(card,currentBox,r)}
           ${getCardName(card)}
         </div>
       `;
