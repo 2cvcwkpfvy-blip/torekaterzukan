@@ -63,6 +63,28 @@ const CARD_IMAGES = {
   "SV1S スカーレットex|UR|コライドンex":"images/sv/sv1s-106-koraidon-ex-ur.webp",
   "SV1S スカーレットex|UR|ネストボール":"images/sv/sv1s-107-nest-ball-ur.webp",
   "SV1S スカーレットex|UR|基本闘エネルギー":"images/sv/sv1s-108-fighting-energy-ur.webp"
+
+  "SV1V バイオレットex|SR|ワナイダーex":"images/sv/sv1v-091-wanaider-ex-sr.webp",
+"SV1V バイオレットex|SR|ウインディex":"images/sv/sv1v-092-windie-ex-sr.webp",
+"SV1V バイオレットex|SR|ジバコイルex":"images/sv/sv1v-093-jibacoil-ex-sr.webp",
+"SV1V バイオレットex|SR|ミライドンex":"images/sv/sv1v-094-miraidon-ex-sr.webp",
+"SV1V バイオレットex|SR|ジュペッタex":"images/sv/sv1v-095-jupetta-ex-sr.webp",
+"SV1V バイオレットex|SR|テツノワダチex":"images/sv/sv1v-096-tetsunowadachi-ex-sr.webp",
+"SV1V バイオレットex|SR|カエデ":"images/sv/sv1v-097-kaede-sr.webp",
+"SV1V バイオレットex|SR|博士の研究 フトゥー博士":"images/sv/sv1v-098-hakase-no-kenkyu-sr.webp",
+"SV1V バイオレットex|SR|ペパー":"images/sv/sv1v-099-pepper-sr.webp",
+"SV1V バイオレットex|SR|ミモザ":"images/sv/sv1v-100-mimosa-sr.webp",
+
+"SV1V バイオレットex|SAR|ワナイダーex":"images/sv/sv1v-101-wanaider-ex-sar.webp",
+"SV1V バイオレットex|SAR|ミライドンex":"images/sv/sv1v-102-miraidon-ex-sar.webp",
+"SV1V バイオレットex|SAR|テツノワダチex":"images/sv/sv1v-103-tetsunowadachi-ex-sar.webp",
+"SV1V バイオレットex|SAR|ペパー":"images/sv/sv1v-104-pepper-sar.webp",
+"SV1V バイオレットex|SAR|ミモザ":"images/sv/sv1v-105-mimosa-sar.webp",
+
+"SV1V バイオレットex|UR|ミライドンex":"images/sv/sv1v-106-miraidon-ex-ur.webp",
+"SV1V バイオレットex|UR|ふしぎなアメ":"images/sv/sv1v-107-fushigina-ame-ur.webp",
+"SV1V バイオレットex|UR|基本雷エネルギー":"images/sv/sv1v-108-lightning-energy-ur.webp",
+
 };
 
 const CARD_DATA = {
