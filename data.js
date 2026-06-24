@@ -30,7 +30,39 @@ function emptyCards(count){
   return Array.from({length: count}, (_, i) => `画像準備中 ${String(i+1).padStart(2,"0")}`);
 }
 const CARD_IMAGES = {
-  "SV1S スカーレットex|SAR|サーナイトex":"images/sv/IMG_2204.webp"
+  "SV1S スカーレットex|AR|オリーニョ":"images/sv/sv1s-079-olynyo.webp",
+  "SV1S スカーレットex|AR|グレンアルマ":"images/sv/sv1s-080-gurenarma.webp",
+  "SV1S スカーレットex|AR|ウミディグダ":"images/sv/sv1s-081-umidigda.webp",
+  "SV1S スカーレットex|AR|ヘイラッシャ":"images/sv/sv1s-082-heirassha.webp",
+  "SV1S スカーレットex|AR|ラルトス":"images/sv/sv1s-083-ralts.webp",
+  "SV1S スカーレットex|AR|キルリア":"images/sv/sv1s-084-kirlia.webp",
+  "SV1S スカーレットex|AR|パピモッチ":"images/sv/sv1s-085-papimocchi.webp",
+  "SV1S スカーレットex|AR|リオル":"images/sv/sv1s-086-riolu.webp",
+  "SV1S スカーレットex|AR|メグロコ":"images/sv/sv1s-087-meguroko.webp",
+  "SV1S スカーレットex|AR|ガケガニ":"images/sv/sv1s-088-gakegani.webp",
+  "SV1S スカーレットex|AR|ドドゲザン":"images/sv/sv1s-089-dodogezan.webp",
+  "SV1S スカーレットex|AR|ムックル":"images/sv/sv1s-090-mukkuru.webp",
+
+  "SV1S スカーレットex|SR|ギャラドスex":"images/sv/sv1s-091-gyarados-ex.webp",
+  "SV1S スカーレットex|SR|サーナイトex":"images/sv/sv1s-092-sarnaite-ex.webp",
+  "SV1S スカーレットex|SR|イダイナキバex":"images/sv/sv1s-093-idainakiba-ex.webp",
+  "SV1S スカーレットex|SR|コライドンex":"images/sv/sv1s-094-koraidon-ex.webp",
+  "SV1S スカーレットex|SR|ドクロッグex":"images/sv/sv1s-095-dokurog-ex.webp",
+  "SV1S スカーレットex|SR|パフュートンex":"images/sv/sv1s-096-pafyuton-ex.webp",
+  "SV1S スカーレットex|SR|ジニア":"images/sv/sv1s-097-jinia.webp",
+  "SV1S スカーレットex|SR|スター団のしたっぱ":"images/sv/sv1s-098-star-dan-shitappa.webp",
+  "SV1S スカーレットex|SR|博士の研究":"images/sv/sv1s-099-hakase-no-kenkyu.webp",
+  "SV1S スカーレットex|SR|ボタン":"images/sv/sv1s-100-botan.webp",
+
+  "SV1S スカーレットex|SAR|サーナイトex":"images/sv/sv1s-101-sarnaite-ex.webp",
+  "SV1S スカーレットex|SAR|イダイナキバex":"images/sv/sv1s-102-idainakiba-ex.webp",
+  "SV1S スカーレットex|SAR|コライドンex":"images/sv/sv1s-103-koraidon-ex.webp",
+  "SV1S スカーレットex|SAR|ジニア":"images/sv/sv1s-104-jinia.webp",
+  "SV1S スカーレットex|SAR|ボタン":"images/sv/sv1s-105-botan.webp",
+
+  "SV1S スカーレットex|UR|コライドンex":"images/sv/sv1s-106-koraidon-ex-ur.webp",
+  "SV1S スカーレットex|UR|ネストボール":"images/sv/sv1s-107-nest-ball.webp",
+  "SV1S スカーレットex|UR|基本闘エネルギー":"images/sv/sv1s-108-basic-fighting-energy.webp"
 };
 
 const CARD_DATA = {
