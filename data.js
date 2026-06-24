@@ -84,7 +84,7 @@ const CARD_IMAGES = {
   "SV1V バイオレットex|SR|ジュペッタex":"images/sv/sv1v-095-jupetta-ex-sr.webp",
   "SV1V バイオレットex|SR|テツノワダチex":"images/sv/sv1v-096-tetsunowadachi-ex-sr.webp",
   "SV1V バイオレットex|SR|カエデ":"images/sv/sv1v-097-kaede-sr.webp",
-  "SV1V バイオレットex|SR|博士の研究 フトゥー博士":"images/sv/sv1v-098-hakase-no-kenkyu-sr.webp",
+  "SV1V バイオレットex|SR|博士の研究 フトゥー博士":"images/sv/sv1v-098-hakase-no-kenkyu-futuu-sr.webp",
   "SV1V バイオレットex|SR|ペパー":"images/sv/sv1v-099-pepper-sr.webp",
   "SV1V バイオレットex|SR|ミモザ":"images/sv/sv1v-100-mimosa-sr.webp",
 
