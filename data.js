@@ -98,28 +98,21 @@ const CARD_IMAGES = {
   "SV1V バイオレットex|UR|ふしぎなアメ":"images/sv/sv1v-107-fushigina-ame-ur.webp",
   "SV1V バイオレットex|UR|基本雷エネルギー":"images/sv/sv1v-108-lightning-energy-ur.webp",
 
-　// プロモ・限定カード AR仕様
-"プロモ・限定カード|AR仕様|001/SV-P ピカチュウ（『ポケットモンスター スカーレット・バイオレット』早期購入特典）":"images/sv/001-svp-pikachu.webp",
-"プロモ・限定カード|AR仕様|048/SV-P ミライドン（トリプレットビート シールド戦プロモカードパック）":"images/sv/048-svp-miraidon.webp",
-"プロモ・限定カード|AR仕様|049/SV-P コライドン（トリプレットビート シールド戦プロモカードパック）":"images/sv/049-svp-koraidon.webp",
-"プロモ・限定カード|AR仕様|098/SV-P 名探偵ピカチュウ（『帰ってきた 名探偵ピカチュウ』早期購入特典）":"images/sv/098-svp-detective-pikachu.webp",
+  "プロモ・限定カード|AR仕様|001/SV-P ピカチュウ（『ポケットモンスター スカーレット・バイオレット』早期購入特典）":"images/sv/001-svp-pikachu.webp",
+  "プロモ・限定カード|AR仕様|048/SV-P ミライドン（トリプレットビート シールド戦プロモカードパック）":"images/sv/048-svp-miraidon.webp",
+  "プロモ・限定カード|AR仕様|049/SV-P コライドン（トリプレットビート シールド戦プロモカードパック）":"images/sv/049-svp-koraidon.webp",
+  "プロモ・限定カード|AR仕様|098/SV-P 名探偵ピカチュウ（『帰ってきた 名探偵ピカチュウ』早期購入特典）":"images/sv/098-svp-detective-pikachu.webp",
+  "プロモ・限定カード|AR仕様|SVG 050/049 フシギダネ（スタートデッキGenerations スペシャルバトルセット）":"images/sv/svg-050-fushigidane.webp",
+  "プロモ・限定カード|AR仕様|SVG 051/049 ヒトカゲ（スタートデッキGenerations スペシャルバトルセット）":"images/sv/svg-051-hitokage.webp",
+  "プロモ・限定カード|AR仕様|SVG 052/049 ゼニガメ（スタートデッキGenerations スペシャルバトルセット）":"images/sv/svg-052-zenigame.webp",
+  "プロモ・限定カード|AR仕様|218/SV-P ピカチュウ（ポケカの夏がキタ！プロモカードGetキャンペーン）":"images/sv/218-svp-pikachu.webp",
+  "プロモ・限定カード|AR仕様|192/SV-P ニャース（スタートデッキGenerations スペシャルバトルセット）":"images/sv/192-svp-nyarth.webp",
+  "プロモ・限定カード|AR仕様|193/SV-P パルデアウパー（スタートデッキGenerations スペシャルバトルセット）":"images/sv/193-svp-paldea-wooper.webp",
+  "プロモ・限定カード|AR仕様|232/SV-P ナンジャモのカイデン（バトルパートナーズ BOX購入特典）":"images/sv/232-svp-nanjamo-no-kaiden.webp",
+  "プロモ・限定カード|AR仕様|SVOD 019/018 ダイゴのダンバル（スターターセットex ダイゴのダンバル＆メタグロスex）":"images/sv/svod-019-daigo-danbaru.webp",
+  "プロモ・限定カード|AR仕様|SVOM 020/019 マリィのモルペコ（スターターセットex マリィのモルペコ＆オーロンゲex）":"images/sv/svom-020-mary-morpeko.webp",
 
-"プロモ・限定カード|AR仕様|SVG 050/049 フシギダネ（スタートデッキGenerations スペシャルバトルセット）":"images/sv/svg-050-fushigidane.webp",
-"プロモ・限定カード|AR仕様|SVG 051/049 ヒトカゲ（スタートデッキGenerations スペシャルバトルセット）":"images/sv/svg-051-hitokage.webp",
-"プロモ・限定カード|AR仕様|SVG 052/049 ゼニガメ（スタートデッキGenerations スペシャルバトルセット）":"images/sv/svg-052-zenigame.webp",
-
-"プロモ・限定カード|AR仕様|218/SV-P ピカチュウ（ポケカの夏がキタ！プロモカードGetキャンペーン）":"images/sv/218-svp-pikachu.webp",
-
-"プロモ・限定カード|AR仕様|192/SV-P ニャース（スタートデッキGenerations スペシャルバトルセット）":"images/sv/192-svp-nyarth.webp",
-"プロモ・限定カード|AR仕様|193/SV-P パルデアウパー（スタートデッキGenerations スペシャルバトルセット）":"images/sv/193-svp-paldea-wooper.webp",
-
-"プロモ・限定カード|AR仕様|232/SV-P ナンジャモのカイデン（バトルパートナーズ BOX購入特典）":"images/sv/232-svp-nanjamo-no-kaiden.webp",
-
-"プロモ・限定カード|AR仕様|SVOD 019/018 ダイゴのダンバル（スターターセットex ダイゴのダンバル＆メタグロスex）":"images/sv/svod-019-daigo-danbaru.webp",
-"プロモ・限定カード|AR仕様|SVOM 020/019 マリィのモルペコ（スターターセットex マリィのモルペコ＆オーロンゲex）":"images/sv/svom-020-mary-morpeko.webp",
-
-// プロモ・限定カード SAR仕様
-"プロモ・限定カード|SAR仕様|WCS23 001/030 ピカチュウex (ポケモンWCS2023横浜 記念デッキ「ピカチュウ」収録)":"images/sv/wcs23-001-pikachu-ex.webp"
+  "プロモ・限定カード|SAR仕様|WCS23 001/030 ピカチュウex (ポケモンWCS2023横浜 記念デッキ「ピカチュウ」収録)":"images/sv/wcs23-001-pikachu-ex.webp"
 };
 
 const CARD_DATA = {
