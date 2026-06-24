@@ -38,11 +38,13 @@ button{font-family:inherit}
 .cardBox{background:#faf9f4;border:1px solid #d8c88a;border-radius:12px;padding:8px;text-align:center;font-family:sans-serif;font-size:13px;white-space:pre-line}
 .imgBox{aspect-ratio:63/88;background:linear-gradient(135deg,#ddd,#fff);border-radius:8px;margin-bottom:8px;overflow:hidden;width:100%}
 .imgBox img{width:100%;height:100%;object-fit:cover;display:block}
+.filledPocket{padding:4px;align-self:start}
+.filledPocket .imgBox{margin-bottom:0}
 .small{font-family:sans-serif;font-size:12px;color:#666}
 .spread{display:grid;grid-template-columns:1fr 26px 1fr;gap:10px;overflow-x:auto}
 .page{min-width:310px;background:#ede9dd;border-radius:18px;padding:12px}
-.grid9{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
-.grid12{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.grid9{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;align-items:start}
+.grid12{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;align-items:start}
 .ring{background:#111;border-radius:18px;min-height:430px;position:relative}
 .ring:before,.ring:after{content:"";position:absolute;left:50%;transform:translateX(-50%);width:12px;height:12px;border-radius:50%;background:#C9A227}
 .ring:before{top:120px}.ring:after{bottom:120px}
@@ -323,7 +325,11 @@ function renderSearch(){
       c.name.includes(q) ||
       c.rarity.includes(q) ||
       c.set.includes(q);
-  }).slice(0,80);
+  });
+
+  if(!q){
+    list=list.slice(0,80);
+  }
 
   let html="";
 
@@ -345,6 +351,8 @@ function setPocket(text,image){
   if(selectedPocket){
     filingState[currentFilingMode][selectedPocket.index]={text,image};
 
+    selectedPocket.el.classList.add("filledPocket");
+
     if(image){
       selectedPocket.el.innerHTML=`<div class="imgBox"><img src="${image}" alt="${text}"></div>`;
     }else{
@@ -360,7 +368,7 @@ function renderPocket(num,index){
 
   if(saved && saved.image){
     return `
-      <div class="cardBox pocketSelect" onclick="choosePocket(this,${index})">
+      <div class="cardBox pocketSelect filledPocket" onclick="choosePocket(this,${index})">
         <div class="imgBox"><img src="${saved.image}" alt="${saved.text}"></div>
       </div>
     `;
@@ -368,7 +376,7 @@ function renderPocket(num,index){
 
   if(saved){
     return `
-      <div class="cardBox pocketSelect" onclick="choosePocket(this,${index})">
+      <div class="cardBox pocketSelect filledPocket" onclick="choosePocket(this,${index})">
         <div class="imgBox"></div>
       </div>
     `;
