@@ -29,6 +29,9 @@ const SETS = [
 function emptyCards(count){
   return Array.from({length: count}, (_, i) => `画像準備中 ${String(i+1).padStart(2,"0")}`);
 }
+const CARD_IMAGES = {
+  "SV1S スカーレットex|SAR|サーナイトex":"images/sv/IMG_2204.webp"
+};
 
 const CARD_DATA = {
   "SV1S スカーレットex": {
