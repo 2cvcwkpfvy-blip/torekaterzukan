@@ -36,7 +36,7 @@ button{font-family:inherit}
 .rarityBtn{text-align:left}
 .cardGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
 .cardBox{background:#faf9f4;border:1px solid #d8c88a;border-radius:12px;padding:8px;text-align:center;font-family:sans-serif;font-size:13px;white-space:pre-line}
-.imgBox{aspect-ratio:63/88;background:linear-gradient(135deg,#ddd,#fff);border-radius:8px;margin-bottom:8px;overflow:hidden}
+.imgBox{aspect-ratio:63/88;background:linear-gradient(135deg,#ddd,#fff);border-radius:8px;margin-bottom:8px;overflow:hidden;width:100%}
 .imgBox img{width:100%;height:100%;object-fit:cover;display:block}
 .small{font-family:sans-serif;font-size:12px;color:#666}
 .spread{display:grid;grid-template-columns:1fr 26px 1fr;gap:10px;overflow-x:auto}
@@ -141,7 +141,7 @@ button{font-family:inherit}
   <div class="contentBox">
     <button class="btn dark" onclick="openPanel('filing')">← ファイルへ戻る</button>
     <h2 class="centerTitle">カードを選択</h2>
-    <input id="cardSearch" class="searchBox" placeholder="カード名で検索" oninput="renderSearch()">
+    <input id="cardSearch" class="searchBox" placeholder="カード名・レアリティ・BOX名で検索" oninput="renderSearch()">
     <div id="searchResults"></div>
   </div>
 </section>
@@ -151,6 +151,12 @@ button{font-family:inherit}
 <script>
 let currentBox="";
 let selectedPocket=null;
+let currentFilingMode=9;
+
+const filingState = {
+  9: Array(18).fill(null),
+  12: Array(24).fill(null)
+};
 
 function getCardName(card){
   if(typeof card==="string") return card;
@@ -303,8 +309,8 @@ function openRarity(r){
   openPanel("cards");
 }
 
-function choosePocket(el){
-  selectedPocket=el;
+function choosePocket(el,index){
+  selectedPocket={el,index};
   document.getElementById("cardSearch").value="";
   renderSearch();
   openPanel("selectCard");
@@ -312,12 +318,20 @@ function choosePocket(el){
 
 function renderSearch(){
   let q=document.getElementById("cardSearch").value.trim();
-  let list=allCards().filter(c=>!q || c.name.includes(q)).slice(0,80);
+  let list=allCards().filter(c=>{
+    return !q ||
+      c.name.includes(q) ||
+      c.rarity.includes(q) ||
+      c.set.includes(q);
+  }).slice(0,80);
+
   let html="";
 
   list.forEach(c=>{
+    const safeName = c.name.replace(/'/g,"\\'");
+    const safeImage = c.image.replace(/'/g,"\\'");
     html+=`
-      <button class="resultItem" onclick="setPocket('${c.name} ${c.rarity}','${c.image}')">
+      <button class="resultItem" onclick="setPocket('${safeName} ${c.rarity}','${safeImage}')">
         ${c.name}　${c.rarity}<br>
         <span class="small">${c.set}</span>
       </button>
@@ -329,17 +343,50 @@ function renderSearch(){
 
 function setPocket(text,image){
   if(selectedPocket){
+    filingState[currentFilingMode][selectedPocket.index]={text,image};
+
     if(image){
-      selectedPocket.innerHTML=`<div class="imgBox"><img src="${image}" alt="${text}"></div>${text}`;
+      selectedPocket.el.innerHTML=`<div class="imgBox"><img src="${image}" alt="${text}"></div>`;
     }else{
-      selectedPocket.innerHTML=`<div class="imgBox"></div>${text}`;
+      selectedPocket.el.innerHTML=`<div class="imgBox"></div>`;
     }
   }
+
   openPanel("filing");
 }
 
+function renderPocket(num,index){
+  const saved=filingState[num][index];
+
+  if(saved && saved.image){
+    return `
+      <div class="cardBox pocketSelect" onclick="choosePocket(this,${index})">
+        <div class="imgBox"><img src="${saved.image}" alt="${saved.text}"></div>
+      </div>
+    `;
+  }
+
+  if(saved){
+    return `
+      <div class="cardBox pocketSelect" onclick="choosePocket(this,${index})">
+        <div class="imgBox"></div>
+      </div>
+    `;
+  }
+
+  return `
+    <div class="cardBox pocketSelect" onclick="choosePocket(this,${index})">
+      <div class="imgBox"></div>
+      空
+    </div>
+  `;
+}
+
 function showFiling(num){
+  currentFilingMode=num;
   let cls=num===9 ? "grid9" : "grid12";
+  let total=num*2;
+
   let html=`
     <h3>${num}ポケット見開き</h3>
     <p class="small">ポケットを押すとカードを検索できます。</p>
@@ -350,12 +397,7 @@ function showFiling(num){
   `;
 
   for(let i=0;i<num;i++){
-    html+=`
-      <div class="cardBox pocketSelect" onclick="choosePocket(this)">
-        <div class="imgBox"></div>
-        空
-      </div>
-    `;
+    html+=renderPocket(num,i);
   }
 
   html+=`
@@ -367,13 +409,8 @@ function showFiling(num){
         <div class="${cls}">
   `;
 
-  for(let i=0;i<num;i++){
-    html+=`
-      <div class="cardBox pocketSelect" onclick="choosePocket(this)">
-        <div class="imgBox"></div>
-        空
-      </div>
-    `;
+  for(let i=num;i<total;i++){
+    html+=renderPocket(num,i);
   }
 
   html+=`
