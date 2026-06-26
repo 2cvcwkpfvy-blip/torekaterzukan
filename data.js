@@ -940,8 +940,8 @@ const CARD_IMAGES = {
   "SV11W ホワイトフレア|SR|サザンドラex":"images/sv/sv11w-sr-004.webp",
   "SV11W ホワイトフレア|SR|バッフロンex":"images/sv/sv11w-sr-005.webp",
   "SV11W ホワイトフレア|SR|クラウン":"images/sv/sv11w-sr-006.webp",
-  "SV11W ホワイトフレア|SR|トウコ":"images/sv/sv11w-sr-007.webp"
-});
+  "SV11W ホワイトフレア|SR|トウコ":"images/sv/sv11w-sr-007.webp",
+
 
 "プロモ・限定カード|AR仕様|001/SV-P ピカチュウ（『ポケットモンスター スカーレット・バイオレット』早期購入特典）":"images/sv/promo-001-svp-pikachu.webp",
 "プロモ・限定カード|AR仕様|048/SV-P ミライドン（トリプレットビート シールド戦プロモカードパック）":"images/sv/promo-048-svp-miraidon.webp",
