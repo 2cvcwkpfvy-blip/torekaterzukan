@@ -919,7 +919,7 @@ const CARD_IMAGES = {
   "SV10 ロケット団の栄光|SR|レジロックex":"images/sv/sv10-115-regirock-ex-sr.webp",
   "SV10 ロケット団の栄光|SR|ロケット団のニドキングex":"images/sv/sv10-116-rocketdan-no-nidoking-ex-sr.webp",
   "SV10 ロケット団の栄光|SR|ロケット団のクロバットex":"images/sv/sv10-117-rocketdan-no-crobat-ex-sr.webp",
-  "SV10 ロケット団の栄光|SR|ロケット団のペルシアンex":"images/sv/sv10-118-rocketdan-no-persian-ex-sr.webp",
+  "SV10 ロケット団の栄光|SR|ロケット団のペルシアンex":"images/sv/IMG_3178.webp",
   "SV10 ロケット団の栄光|SR|ロケット団のアテナ":"images/sv/sv10-119-rocketdan-no-athena-sr.webp",
   "SV10 ロケット団の栄光|SR|ロケット団のアポロ":"images/sv/sv10-120-rocketdan-no-apollo-sr.webp",
   "SV10 ロケット団の栄光|SR|ロケット団のサカキ":"images/sv/sv10-121-rocketdan-no-sakaki-sr.webp",
