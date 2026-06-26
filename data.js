@@ -965,8 +965,8 @@ const CARD_IMAGES = {
 "プロモ・限定カード|AR仕様|271/SV-P ビクティニ（ブラックボルト・ホワイトフレア カードファイルセット）":"images/sv/IMG_2708.jpeg",
   "プロモ・限定カード|BWR仕様|288/SV-P ビクティニ（ビクティニBWR争奪戦・おうちでブラックボルト・ホワイトフレア デッキ構築戦キャンペーン）":"images/sv/promo-288-svp-victini-bwr.webp",
 
-"プロモ・限定カード|SR仕様|279/SV-P チェレン（ビクティニBWR争奪戦 参加賞プロモパック）":"images/sv/promo-279-svp-cheren-sr.webp",
-"プロモ・限定カード|SAR仕様|WCS23 001/030 ピカチュウex (ポケモンWCS2023横浜 記念デッキ「ピカチュウ」収録)":"images/sv/promo-wcs23-001-pikachu-ex.webp"
+"プロモ・限定カード|SR仕様|279/SV-P チェレン（ビクティニBWR争奪戦 参加賞プロモパック）":"images/sv/IMG_2966.webp",
+"プロモ・限定カード|SAR仕様|WCS23 001/030 ピカチュウex (ポケモンWCS2023横浜 記念デッキ「ピカチュウ」収録)":"images/sv/IMG_3200.webp"
 };
 
 const CARD_DATA = {
