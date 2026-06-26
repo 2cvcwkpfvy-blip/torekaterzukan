@@ -639,7 +639,7 @@ const CARD_IMAGES = {
   "SV11W ホワイトフレア|AR|ワシボン":"images/sv/sv11w-156-ar.webp",
   "SV11W ホワイトフレア|AR|ウォーグル":"images/sv/sv11w-157-ar.webp",
   "SV11W ホワイトフレア|AR|トルネロス":"images/sv/sv11w-158-ar.webp",
-
+"SV1a トリプレットビート|UR|マスカーニャex":"images/sv/IMG_3205.webp",
  "SV1a トリプレットビート|UR|ラウドボーンex":"images/sv/sv1a-ur-001.webp",
   "SV1a トリプレットビート|UR|ウェーニバルex":"images/sv/sv1a-ur-002.webp",
   "SV2D クレイバースト|UR|ディンルーex":"images/sv/sv2d-ur-001.webp",
