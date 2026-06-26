@@ -212,8 +212,8 @@ const CARD_IMAGES = {
   "SV8a テラスタルフェスex|SAR|サーフゴーex":"images/sv/sv8a-surfgo-ex-sar.webp",
   "SV8a テラスタルフェスex|SAR|ドラパルトex":"images/sv/sv8a-dragapult-ex-sar.webp",
   "SV8a テラスタルフェスex|SAR|タケルライコex":"images/sv/sv8a-takeruraiko-ex-sar.webp",
-  "SV8a テラスタルフェスex|SAR|イーブイex":"images/sv/sv8a-eevee-ex-224-sar.webp",
-  "SV8a テラスタルフェスex|SAR|イーブイex":"images/sv/sv8a-eevee-ex-225-sar.webp",
+  "SV8a テラスタルフェスex|SAR|イーブイex（223/187）":"images/sv/sv8a-eevee-ex-223-sar.webp",
+  "SV8a テラスタルフェスex|SAR|イーブイex（224/187）":"images/sv/sv8a-eevee-ex-224-sar.webp",
   "SV8a テラスタルフェスex|SAR|ガチグマ アカツキex":"images/sv/sv8a-gachiguma-akatsuki-ex-sar.webp",
   "SV8a テラスタルフェスex|SAR|テラパゴスex":"images/sv/sv8a-terapagos-ex-sar.webp",
   "SV8a テラスタルフェスex|SAR|アカマツ":"images/sv/sv8a-akamatsu-sar.webp",
@@ -1069,8 +1069,8 @@ const CARD_DATA = {
     "オーガポン いどのめんex","サンダースex","テツノカイナex","エーフィex",
     "ニンフィアex","テツノブジンex","テツノカシラex","スナノケガワex",
     "オーガポン いしずえのめんex","ブラッキーex","トドロクツキex","モモワロウex",
-    "サーフゴーex","ドラパルトex","タケルライコex","イーブイex",
-    "イーブイex","ガチグマ アカツキex","テラパゴスex","アカマツ",
+    "サーフゴーex","ドラパルトex","タケルライコex","イーブイex（223/187）",
+    "イーブイex（224/187）","ガチグマ アカツキex","テラパゴスex","アカマツ",
     "アンズの秘技","カキツバタ","スグリ","タロ","ネリネ"
   ],
   "UR": [
