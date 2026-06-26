@@ -705,7 +705,7 @@ const CARD_IMAGES = {
   "SV10 ロケット団の栄光|UR|ロケット団のミュウツーex":"images/sv/sv10-ur-001.webp",
   "SV10 ロケット団の栄光|UR|ロケット団のクロバットex":"images/sv/sv10-ur-002.webp",
   "SV10 ロケット団の栄光|UR|ジャミングタワー":"images/sv/sv10-ur-003.webp",
-  "プロモ・限定カード|BWR仕様|ビクティニ":"images/sv/promo-bwr-001.webp",
+
   "SV11W ホワイトフレア|BWR|レシラムex":"images/sv/sv11w-bwr-001.webp",
   "SV11B ブラックボルト|BWR|ゼクロムex":"images/sv/sv11b-bwr-001.webp",
   "SV1a トリプレットビート|SR|マスカーニャex":"images/sv/sv1a-sr-001.webp",
@@ -963,10 +963,10 @@ const CARD_IMAGES = {
 "プロモ・限定カード|AR仕様|SVOD 019/018 ダイゴのダンバル（スターターセットex ダイゴのダンバル＆メタグロスex）":"images/sv/promo-svod-019-daigo-danbaru.webp",
 "プロモ・限定カード|AR仕様|SVOM 020/019 マリィのモルペコ（スターターセットex マリィのモルペコ＆オーロンゲex）":"images/sv/promo-svom-020-mary-morpeko.webp",
 "プロモ・限定カード|AR仕様|271/SV-P ビクティニ（ブラックボルト・ホワイトフレア カードファイルセット）":"images/sv/IMG_2708.jpeg",
-  "プロモ・限定カード|BWR仕様|288/SV-P ビクティニ（ビクティニBWR争奪戦・おうちでブラックボルト・ホワイトフレア デッキ構築戦キャンペーン）":"images/sv/promo-288-svp-victini-bwr.webp",
+  "プロモ・限定カード|BWR仕様|288/SV-P ビクティニ（ビクティニBWR争奪戦・おうちでブラックボルト・ホワイトフレア デッキ構築戦キャンペーン）":"images/sv/IMG_3200.webp",
 
 "プロモ・限定カード|SR仕様|279/SV-P チェレン（ビクティニBWR争奪戦 参加賞プロモパック）":"images/sv/IMG_2966.webp",
-"プロモ・限定カード|SAR仕様|WCS23 001/030 ピカチュウex (ポケモンWCS2023横浜 記念デッキ「ピカチュウ」収録)":"images/sv/IMG_3200.webp"
+"プロモ・限定カード|SAR仕様|WCS23 001/030 ピカチュウex (ポケモンWCS2023横浜 記念デッキ「ピカチュウ」収録)":"images/sv/promo-wcs23-001-pikachu-ex.webp"
 };
 
 const CARD_DATA = {
